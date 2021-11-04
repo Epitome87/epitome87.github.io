@@ -21,11 +21,53 @@ Tentative Color Scheme #1
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* hide scrollbar but allow scrolling */
+/* body,
+.snap-mandatory {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar,
+.snap-mandatory::-webkit-scrollbar {
+  display: none;
+} */
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #1e1e24;
   color: #e1dee9;
   padding: 2rem;
+}
+
+/* Scroll-Snapping Stuff */
+.snap-mandatory {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* Snap utlity functions */
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
+.snap-end {
+  scroll-snap-align: end;
 }
 
 header {
@@ -74,8 +116,14 @@ main h1 {
   color: #2af5ff;
 }
 
+#avatar {
+  width: 200px;
+  border-radius: 50%;
+}
+
 #projects {
   min-height: 100vh;
+  scroll-snap-align: start;
 }
 
 #projects header {
