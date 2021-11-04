@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+/* 
+Tentative Color Scheme #1
+#1E1E24
+#E05263
+#5F758E
+#E1DEE9
+#477998
+#2AF5FF instead of other blues?
+*/
+
+:root {
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1e1e24;
+  color: #e1dee9;
+  padding: 2rem;
+}
+
+header {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+#header-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbar-main ul {
+  display: flex;
+  gap: 3rem;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+
+#navbar-main a:link,
+#navbar-main a:visited {
+  color: #e1dee9;
+  text-decoration: none;
+}
+
+#navbar-main a:hover {
+  transform: scale(1.5);
+  color: pink;
+}
+
+#navbar-main a:active {
+}
+
+main {
+  min-height: 100vh;
+  /* background: linear-gradient(to top left, #1e1e24 50%, #e05263 100%); */
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main h1 {
+  /* color: #477998; */
+  color: #2af5ff;
+}
+
+#projects {
+  min-height: 100vh;
+}
+
+#projects header {
+  /* color: #e05263; */
+}
+
+#toolkit {
+  min-height: 100vh;
+}
+
+#toolkit header {
+  /* color: #e05263; */
+}
+
+#contact {
+  min-height: 100vh;
+}
+
+#contact header {
+  /* color: #e05263; */
+}
+
+footer {
+  text-align: center;
+}
