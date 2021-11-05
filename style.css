@@ -101,6 +101,26 @@ header {
 #navbar-main a:active {
 }
 
+@keyframes shrink-grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes rainbow-text {
+  from {
+    color: #2af5ff;
+  }
+
+  to {
+    color: violet;
+  }
+}
+
 main {
   min-height: 100vh;
   /* background: linear-gradient(to top left, #1e1e24 50%, #e05263 100%); */
@@ -113,11 +133,31 @@ main {
 
 main h1 {
   /* color: #477998; */
+  color: #e1dee9;
+}
+
+main #name_span {
   color: #2af5ff;
+  font-size: 120%;
+  /* animation: rainbow-text 2s alternate infinite forwards; */
+}
+
+main #subtitle {
+  position: relative;
+  text-align: end;
+}
+
+main #subtitle_span-adjective {
+  position: absolute;
+  left: 0;
+  color: #e05263;
+  /* animation: shrink-grow 2s alternate infinite forwards; */
 }
 
 #avatar {
-  width: 200px;
+  /* 200px is fine */
+  width: 400px;
+  margin-top: 2rem;
   border-radius: 50%;
 }
 
@@ -126,24 +166,23 @@ main h1 {
   scroll-snap-align: start;
 }
 
-#projects header {
-  /* color: #e05263; */
-}
-
 #toolkit {
   min-height: 100vh;
 }
 
-#toolkit header {
-  /* color: #e05263; */
+#toolkit #tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#toolkit #tools-container img {
 }
 
 #contact {
   min-height: 100vh;
-}
-
-#contact header {
-  /* color: #e05263; */
 }
 
 footer {
