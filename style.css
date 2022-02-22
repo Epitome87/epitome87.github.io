@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
 
 /* 
 Tentative Color Scheme #1
@@ -44,7 +44,7 @@ body::-webkit-scrollbar,
 } */
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #1e1e24;
   color: #e1dee9;
   padding: 2rem;
@@ -166,6 +166,57 @@ main #subtitle_span-adjective {
   scroll-snap-align: start;
 }
 
+#projects .projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+#projects .project-card {
+  padding: 1rem;
+  max-width: 300px;
+  border-radius: 10px;
+  background-color: #27272e /* #1e1e24; */;
+  box-shadow: 0 5px 5px rgba(255, 0, 0, 0.2);
+}
+
+#projects .project-card:nth-of-type(1):hover {
+  box-shadow: 0 8px 10px rgba(255, 0, 0, 0.5);
+}
+
+#projects .project-card:nth-of-type(2) {
+  box-shadow: 0 5px 5px rgba(0, 255, 0, 0.2);
+}
+
+#projects .project-card:nth-of-type(2):hover {
+  box-shadow: 0 8px 10px rgba(0, 255, 0, 0.5);
+}
+
+#projects .project-card:nth-of-type(3) {
+  box-shadow: 0 5px 5px rgba(0, 0, 255, 0.2);
+}
+
+#projects .project-card:nth-of-type(3):hover {
+  box-shadow: 0 8px 10px rgba(0, 0, 255, 0.5);
+}
+
+#projects .project-card:nth-of-type(4) {
+  box-shadow: 0 5px 5px rgba(252, 248, 5, 0.2);
+}
+
+#projects .project-card:nth-of-type(4):hover {
+  box-shadow: 0 8px 10px rgba(252, 248, 0, 0.5);
+}
+
+#projects .project-card .project-header {
+  font-size: 2rem;
+}
+
+#projects .project-card .project-body {
+  font-size: 1rem;
+}
+
 #toolkit {
   min-height: 100vh;
 }
@@ -178,7 +229,17 @@ main #subtitle_span-adjective {
   align-items: center;
 }
 
+#toolkit #tools-container a {
+}
+
 #toolkit #tools-container img {
+  width: 150px;
+  transition: 0.1s ease-in;
+}
+
+#toolkit #tools-container img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.3);
 }
 
 #contact {
