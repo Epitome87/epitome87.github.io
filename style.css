@@ -21,6 +21,15 @@ Tentative Color Scheme #1
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: #ff0057;
+  color: white;
+  text-decoration: underline;
+  /* and its associated properties */
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);
+  stroke-width: 5px;
+}
+
 img {
   width: 100%;
 }
@@ -134,6 +143,11 @@ main {
 main h1 {
   /* color: #477998; */
   color: #e1dee9;
+
+  color: var(pink);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: var(pink);
 }
 
 main #name_span {
@@ -176,6 +190,7 @@ main #subtitle_span-adjective {
 #projects .project-card {
   padding: 1rem;
   max-width: 300px;
+  cursor: pointer;
   border-radius: 10px;
   background-color: #27272e /* #1e1e24; */;
   box-shadow: 0 5px 5px rgba(255, 0, 0, 0.2);
@@ -221,7 +236,7 @@ main #subtitle_span-adjective {
   min-height: 100vh;
 }
 
-#toolkit #tools-container {
+#toolkit .tools-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -229,15 +244,15 @@ main #subtitle_span-adjective {
   align-items: center;
 }
 
-#toolkit #tools-container a {
+#toolkit .tools-container a {
 }
 
-#toolkit #tools-container img {
+#toolkit .tools-container img {
   width: 150px;
   transition: 0.1s ease-in;
 }
 
-#toolkit #tools-container img:hover {
+#toolkit .tools-container img:hover {
   transform: scale(1.1);
   filter: brightness(1.3);
 }
@@ -248,4 +263,39 @@ main #subtitle_span-adjective {
 
 footer {
   text-align: center;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.reveal {
+  position: relative;
+  transform: translateX(-100vw);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateX(0);
+  opacity: 1;
 }
