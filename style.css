@@ -136,7 +136,7 @@ main {
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   text-align: center;
 }
 
@@ -168,11 +168,37 @@ main #subtitle_span-adjective {
   /* animation: shrink-grow 2s alternate infinite forwards; */
 }
 
-#avatar {
-  /* 200px is fine */
+.avatar-card {
+  position: relative;
   width: 400px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
   margin-top: 2rem;
   border-radius: 50%;
+}
+
+.avatar-card img {
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 1s ease-in;
+}
+
+.avatar-card img:nth-child(2) {
+  transform: rotateY(180deg);
+  filter: hue-rotate(0deg);
+}
+
+.avatar-card:hover img:nth-child(1) {
+  /* transform-origin: -50%; */
+  transform: rotateY(-180deg);
+}
+
+.avatar-card:hover img:nth-child(2) {
+  /* transform-origin: -50%; */
+  transform: rotateY(0deg);
+  filter: hue-rotate(360deg);
 }
 
 #projects {
