@@ -176,13 +176,14 @@ main #subtitle_span-adjective {
   transform-style: preserve-3d;
   perspective: 1000px;
   margin-top: 2rem;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .avatar-card img {
   position: absolute;
   backface-visibility: hidden;
   transition: 1s ease-in;
+  border-radius: 50%;
 }
 
 .avatar-card img:nth-child(2) {
