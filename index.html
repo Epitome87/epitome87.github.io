@@ -29,71 +29,95 @@
       </nav>
     </header>
 
-    <div>
-      <!-- Main: Name, sub-title, visually-pleasing full-height page -->
-      <main id="hero" class="reveal">
+    <!-- Main: Name, sub-title, visually-pleasing full-height page -->
+    <div id="particles-js" class="particles-js">
+      <main id="hero">
         <header>
-          <h1>Hi, I'm <span id="name_span">Matthew</span></h1>
+          <h1>
+            <span id="name_span--first">Matthew</span>
+            <span id="name_span--last">McGrath</span>
+          </h1>
           <p id="subtitle">
             <span id="subtitle_span-adjective">Aspiring</span>
             <span id="subtitle_span-noun">Web Developer</span>
           </p>
-          <div class="avatar-card">
-            <img class="avatar" src="Matthew-Cartoon-Sigh.png" alt="Matthew McGrath" />
-            <img class="avatar" src="Matthew-Cartoon-Sigh.png" alt="Matthew McGrath Secondary"/>
-          </div>
         </header>
+        <div class="avatar-card">
+          <img
+            class="avatar"
+            src="Matthew-Cartoon-Sigh.png"
+            alt="Matthew McGrath"
+          />
+          <img
+            class="avatar"
+            src="Matthew-Cartoon-Sigh.png"
+            alt="Matthew McGrath Secondary"
+          />
+        </div>
       </main>
+    </div>
 
-      <!-- Projects Section -->
-      <section id="projects" class="snap-start reveal">
-        <header>
-          <h2>My Projects</h2>
-          <div class="projects-container">
-            <div class="project-card">
-              <div class="project-header">Lorem, ipsum dolor.</div>
-              <div class="project-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatibus officiis quidem.</div>
-            </div>
-            <div class="project-card">
-              <div class="project-header">Lorem, ipsum dolor.</div>
-              <div class="project-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatibus officiis quidem.</div>
-            </div>
-            <div class="project-card">
-              <div class="project-header">Lorem, ipsum dolor.</div>
-              <div class="project-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatibus officiis quidem.</div>
-            </div>
-            <div class="project-card">
-              <div class="project-header">Lorem, ipsum dolor.</div>
-              <div class="project-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatibus officiis quidem.</div>
+    <!-- Projects Section -->
+    <section id="projects" class="snap-start">
+      <header class="reveal">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-header">Lorem, ipsum dolor.</div>
+            <div class="project-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              voluptatibus officiis quidem.
             </div>
           </div>
-        </header>
-      </section>
+          <div class="project-card">
+            <div class="project-header">Lorem, ipsum dolor.</div>
+            <div class="project-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              voluptatibus officiis quidem.
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">Lorem, ipsum dolor.</div>
+            <div class="project-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              voluptatibus officiis quidem.
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-header">Lorem, ipsum dolor.</div>
+            <div class="project-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              voluptatibus officiis quidem.
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
 
-      <!-- Toolkit Section -->
-      <section id="toolkit" class="snap-start reveal">
-        <header>
-          <h3>Things I Know</h3>
-        </header>
+    <!-- Toolkit Section -->
+    <section id="toolkit" class="snap-start">
+      <header class="reveal">
+        <h3>Things I Know</h3>
+      </header>
 
-        <div>
-          <p>Front-End</p>
-          <div class="tools-container">
-            <!-- CSS3 -->
-            <a href="https://www.w3schools.com/css/" target="_blank"
+      <div>
+        <p>Front-End</p>
+        <div class="tools-container">
+          <!-- CSS3 -->
+          <a href="https://www.w3schools.com/css/" target="_blank"
             ><img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
               alt="CSS3 Logo"
           /></a>
-  
-            <!-- HTML5 -->
-            <a href="https://www.w3.org/html/" target="_blank"
-              ><img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                alt="HTML5 Logo"
-            /></a>
 
-            <a
+          <!-- HTML5 -->
+          <a href="https://www.w3.org/html/" target="_blank"
+            ><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML5 Logo"
+          /></a>
+
+          <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             target="_blank"
             ><img
@@ -101,9 +125,8 @@
               alt="Javascript Logo"
           /></a>
 
-
-            <!-- React -->
-            <a href="https://reactjs.org/" target="_blank"
+          <!-- React -->
+          <a href="https://reactjs.org/" target="_blank"
             ><img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
               alt="React Logo"
@@ -116,15 +139,12 @@
               alt="SASS Logo"
           /></a>
 
-
-  
-            <!-- TypeScript -->
-            <a href="https://www.typescriptlang.org/" target="_blank"
-              ><img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                alt="TypeScript Logo"
-            /></a>
-  
+          <!-- TypeScript -->
+          <a href="https://www.typescriptlang.org/" target="_blank"
+            ><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+              alt="TypeScript Logo"
+          /></a>
         </div>
 
         <div>
@@ -132,42 +152,41 @@
           <div class="tools-container">
             <!-- ExpressJS -->
             <a href="https://expressjs.com" target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"
-              alt="Express Logo"
-              style="background-color: white;"
-          /></a>
-        
-          <!-- MongoDB -->
-          <a href="https://www.mongodb.com/" target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-              alt="Mongodb Logo"
-          /></a>
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"
+                alt="Express Logo"
+                style="background-color: white"
+            /></a>
 
-          <!-- NodeJS -->
-          <a href="https://nodejs.org" target="_blank">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-              alt="NodeJS Logo"
-          /></a>        
+            <!-- MongoDB -->
+            <a href="https://www.mongodb.com/" target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                alt="Mongodb Logo"
+            /></a>
+
+            <!-- NodeJS -->
+            <a href="https://nodejs.org" target="_blank">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="NodeJS Logo"
+            /></a>
           </div>
-                    
         </div>
-       
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contact Me Section -->
-      <section id="contact" class="snap-start ">
-        <header>
-          <h4 class="hover-underline-animation">Contact Me</h4>
-        </header>
-      </section>
-    </div>
+    <!-- Contact Me Section -->
+    <section id="contact" class="snap-start">
+      <header class="reveal">
+        <h4 class="hover-underline-animation">Contact Me</h4>
+      </header>
+    </section>
 
-    <footer>&copy; 2022 Matthew McGrath</footer>
+    <footer class="snap-start">&copy; 2022 Matthew McGrath</footer>
 
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

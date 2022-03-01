@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 /* 
 Tentative Color Scheme #1
@@ -25,7 +25,6 @@ Tentative Color Scheme #1
   background-color: #ff0057;
   color: white;
   text-decoration: underline;
-  /* and its associated properties */
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);
   stroke-width: 5px;
 }
@@ -35,6 +34,7 @@ img {
 }
 
 html {
+  /* scroll-snap-type: y mandatory; */
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
@@ -53,10 +53,10 @@ body::-webkit-scrollbar,
 } */
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #1e1e24;
   color: #e1dee9;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 /* Scroll-Snapping Stuff */
@@ -130,39 +130,62 @@ header {
   }
 }
 
+#particles-js {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
 main {
-  min-height: 100vh;
   /* background: linear-gradient(to top left, #1e1e24 50%, #e05263 100%); */
   font-size: 2rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  /* align-items: center; */
-  text-align: center;
+
+  /* Particle */
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  min-height: calc(100vh - 50px);
+}
+
+main header {
+  width: 650px;
 }
 
 main h1 {
-  /* color: #477998; */
-  color: #e1dee9;
-
-  color: var(pink);
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: var(pink);
 }
 
-main #name_span {
+main #name_span--first {
+  font-size: 4rem;
+  letter-spacing: 10px;
   color: #2af5ff;
-  font-size: 120%;
+}
+
+main #name_span--last {
+  font-size: 1.2em;
+  background: #2af5ff;
+  color: #1e1e24;
+  display: block;
+  padding: 0 1rem;
+  border-radius: 5px;
+  letter-spacing: 1rem;
+  line-height: 1;
   /* animation: rainbow-text 2s alternate infinite forwards; */
 }
 
 main #subtitle {
   position: relative;
   text-align: end;
+  display: flex;
+  justify-content: space-between;
 }
 
 main #subtitle_span-adjective {
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   color: #e05263;
   /* animation: shrink-grow 2s alternate infinite forwards; */
@@ -170,13 +193,13 @@ main #subtitle_span-adjective {
 
 .avatar-card {
   position: relative;
+  height: 450px;
   width: 400px;
   left: 0;
   top: 0;
   transform-style: preserve-3d;
   perspective: 1000px;
   margin-top: 2rem;
-  /* border-radius: 50%; */
 }
 
 .avatar-card img {
@@ -205,6 +228,7 @@ main #subtitle_span-adjective {
 #projects {
   min-height: 100vh;
   scroll-snap-align: start;
+  background-color: #e05263;
 }
 
 #projects .projects-container {
@@ -286,6 +310,7 @@ main #subtitle_span-adjective {
 
 #contact {
   min-height: 100vh;
+  background-color: #e05263;
 }
 
 footer {
@@ -298,7 +323,7 @@ footer {
 }
 
 .hover-underline-animation:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
