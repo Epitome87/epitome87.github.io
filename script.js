@@ -6,10 +6,10 @@ const NOUNS = ['Web Developer', 'Game Developer', '3D Artist'];
 let adjectiveIndex = 0;
 let nounIndex = 0;
 
-adjectiveElement.addEventListener('mouseover', setAdjective);
+// adjectiveElement.addEventListener('mouseover', setAdjective);
 
 // setInterval(setAdjective, 2000);
-setInterval(setNoun, 3000);
+// setInterval(setNoun, 3000);
 
 function setAdjective() {
   if (++adjectiveIndex >= ADJECTIVES.length) adjectiveIndex = 0;
