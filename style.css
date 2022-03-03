@@ -11,6 +11,8 @@ Tentative Color Scheme #1
 */
 
 :root {
+  --color-primary-dark: #1e1e24;
+  --color-red: #f02446;
 }
 
 *,
@@ -54,7 +56,7 @@ body::-webkit-scrollbar,
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #1e1e24;
+  background-color: var(--color-primary-dark);
   color: #e1dee9;
   /* padding: 2rem; */
 }
@@ -139,7 +141,7 @@ header {
 }
 
 main {
-  /* background: linear-gradient(to top left, #1e1e24 50%, #e05263 100%); */
+  /* background: linear-gradient(to top left, var(--color-primary-dark) 50%, #e05263 100%); */
   font-size: 2rem;
   display: flex;
   flex-direction: column;
@@ -200,7 +202,7 @@ main #name_span--first {
 main #name_span--last {
   font-size: 7rem;
   background: #a2d2ff;
-  color: #1e1e24;
+  color: var(--color-primary-dark);
   display: inline-block;
   padding: 0 1rem;
   border-radius: 5px;
@@ -275,7 +277,9 @@ main #subtitle_span-adjective {
 #projects {
   min-height: 100vh;
   scroll-snap-align: start;
-  background-color: #e05263;
+  background-color: var(--color-red);
+  /* background-color: #fd334a; */
+  /* #e05263; */
 }
 
 #projects .projects-container {
@@ -334,6 +338,10 @@ main #subtitle_span-adjective {
   min-height: 100vh;
 }
 
+#toolkit header {
+  padding-top: 2rem;
+}
+
 #toolkit .tools-container {
   display: flex;
   flex-wrap: wrap;
@@ -368,6 +376,9 @@ main #subtitle_span-adjective {
 
 #contact header {
   font-size: 3rem;
+
+  /* Adjust for curve */
+  margin-top: 2rem;
 }
 
 /* Contact Me - Form */
@@ -444,4 +455,98 @@ footer {
 .reveal.active {
   transform: translateX(0);
   opacity: 1;
+}
+
+#projects {
+  min-height: 88vh;
+}
+
+#toolkit {
+  position: relative;
+  min-height: 88vh;
+}
+
+#contact {
+  position: relative;
+  min-height: 88vh;
+}
+
+.wave,
+.wave-contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* transform: translateY(-50%); */
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(108% + 1.3px);
+  height: 75px;
+}
+
+.wave .shape-fill {
+  fill: #0f0f10;
+  fill: var(--color-primary-dark);
+}
+
+.wave-contact {
+  fill: var(--color-primary-dark);
+}
+
+#toolkit svg {
+  color: var(--color-red);
+}
+
+#toolkit svg path {
+  /* This will color the svg the same as its parent */
+  fill: currentColor !important;
+}
+
+#footer {
+  padding: 2rem;
+}
+
+#footer .footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#footer .footer__socials .social-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+#footer a:hover {
+  background-color: white;
+}
+
+#footer a svg {
+  fill: white;
+  width: 65%;
+  height: 65%;
+}
+
+#footer a:hover svg {
+  fill: var(--color-red);
+}
+
+#footer .footer__copyright {
+}
+
+#footer .footer__copyright:first-child() {
+}
+
+#footer .footer__copyright span:nth-child(2) {
+  color: var(--color-red);
 }
