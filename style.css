@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
 /* 
 Tentative Color Scheme #1
@@ -55,7 +55,7 @@ body::-webkit-scrollbar,
 } */
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--color-primary-dark);
   color: #e1dee9;
   /* padding: 2rem; */
@@ -222,20 +222,12 @@ main #name_span--last {
 }
 
 main #subtitle {
-  /* position: relative;
-  text-align: end;
-  display: flex;
-  justify-content: space-between; */
-
-  /* Trying static sub */
   text-align: center;
 }
 
 main #subtitle_span-adjective {
-  /* position: absolute; */
   left: 0;
   color: #e05263;
-  /* animation: shrink-grow 2s alternate infinite forwards; */
 }
 
 .avatar-card {
@@ -277,13 +269,13 @@ main #subtitle_span-adjective {
 #projects {
   min-height: 100vh;
   scroll-snap-align: start;
-  background-color: var(--color-red);
-  /* background-color: #fd334a; */
-  /* #e05263; */
+  /* background-color: var(--color-red); */
+  background-color: var(--color-primary-dark);
 }
 
 #projects .projects-container {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   gap: 2rem;
   margin: 2rem 0;
@@ -291,11 +283,32 @@ main #subtitle_span-adjective {
 
 #projects .project-card {
   padding: 1rem;
-  max-width: 300px;
+  width: 600px;
+  aspect-ratio: 16/9;
   cursor: pointer;
   border-radius: 10px;
   background-color: #27272e /* #1e1e24; */;
   box-shadow: 0 5px 5px rgba(255, 0, 0, 0.2);
+}
+
+#projects #project--flat-ui {
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('images/preview-flat-ui-clone.png');
+  background-size: cover;
+}
+
+#projects #project--fylo {
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('images/preview-fylo.png');
+  background-size: contain;
 }
 
 #projects .project-card:nth-of-type(1):hover {
@@ -381,16 +394,52 @@ main #subtitle_span-adjective {
   margin-top: 2rem;
 }
 
-/* Contact Me - Form */
-form {
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
-  justify-content: center;
+/* Flippable Card - Frontside is form, backside is Thank You message */
+.flippable-form {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  margin-top: 2rem;
+  /* background-color: rgba(27, 27, 50, 0.8); */
+  /* transition: 1s ease-in; */
+}
+
+.flippable-form > form,
+.flippable-form > div {
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 1s ease-in;
+  width: 600px;
+  height: 600px;
   background-color: rgba(27, 27, 50, 0.8);
+}
+
+.flippable-form > div {
+  transform: rotateY(180deg);
+}
+
+.flippable-form:hover > form {
+  transform: rotateY(-180deg);
+}
+
+.flippable-form:hover > div {
+  transform: rotateY(0deg);
+}
+
+/* Contact Me Form */
+form {
+  /* display: flex;
+  flex-direction: column;
+  width: 40vw; */
+  /* justify-content: center; */
   padding: 30px;
   border-radius: 10px;
   color: white;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 label {
@@ -428,7 +477,7 @@ footer {
 }
 
 .hover-underline-animation:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -511,13 +560,28 @@ footer {
   padding: 2rem;
 }
 
-#footer .footer__socials {
+#footer .socials {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
-#footer .footer__socials .social-link {
+#hero .socials {
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.socials .social-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -527,26 +591,50 @@ footer {
   border-radius: 50%;
 }
 
+#hero .socials .social-link {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+#hero a:hover,
 #footer a:hover {
   background-color: white;
 }
 
+#hero a svg,
 #footer a svg {
   fill: white;
   width: 65%;
   height: 65%;
 }
 
+#hero a:hover svg,
 #footer a:hover svg {
   fill: var(--color-red);
 }
 
-#footer .footer__copyright {
-}
-
-#footer .footer__copyright:first-child() {
-}
-
 #footer .footer__copyright span:nth-child(2) {
   color: var(--color-red);
+}
+
+.header-prefix,
+.header-suffix {
+  color: var(--color-red);
+  margin: 0 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  main #name_span--first {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  main #name_span--last {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
 }
