@@ -236,7 +236,7 @@
           </div>
         </div>
       </div>
-      <div class="wave">
+      <!-- <div class="wave">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -248,40 +248,57 @@
             class="shape-fill"
           ></path>
         </svg>
-      </div>
+      </div> -->
     </section>
 
     <!-- Contact Me Section -->
     <section id="contact" class="snap-start">
       <header class="reveal">
         <h4 class="hover-underline-animation">
-          <span class="header-prefix">`</span>Contact
-          <span class="header-suffix">${Matthew}`</span>
+          <span class="header-prefix"></span>Contact
+          <span class="header-suffix">Matthew</span>
         </h4>
       </header>
 
-      <div class="flippable-form">
-        <!-- Frnotside - Form -->
-        <form action="/" method="POST">
-          <div id="name-group">
-            <label for="firstName">First Name</label>
-            <input id="firstName" name="firstName" type="text" />
+      <div class="container right-panel-active" id="container">
+        <div class="form-container sign-up-container">
+          <form action="#">
+            <h1>Create Account</h1>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="Enter you comment here"></textarea>
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button>Sign In</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Contact Me!</h1>
+              <p>Fill out the form with your inquiry or connect with me on social media.</p>
+              <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Message Sent!</h1>
+              <p>Thanks for reaching out! I will try my best to return your message in a timely manner.</p>
+              <button class="ghost" id="signUp">Sign Up</button>
+            </div>
           </div>
-          <div id="email-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" />
-          </div>
-          <div id="message-group">
-            What's your message
-            <textarea name="" id="" cols="15" rows="5"></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
-        <!-- Backside - Thank You -->
-        <div>
-          <p>
-            Thank you for the message! I will try my best to get back to you!
-          </p>
         </div>
       </div>
 
