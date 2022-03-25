@@ -9,7 +9,6 @@
   </head>
   <body>
     <header id="header-main" class="snap-start">
-      <!-- For now, plain text logo -->
       <p>MBM</p>
       <nav id="navbar-main">
         <ul>
@@ -110,6 +109,36 @@
       </main>
     </div>
 
+    <!-- About Section -->
+    <section id="about" class="snap-start">
+      <header class="reveal">
+        <h2>About Me</h2>
+      </header>
+      <div class="about-flex">
+        <div class="about-avatar">
+          <img src="images/matthew.png" alt="Matthew" />
+        </div>
+        <div class="about__details">
+          <div class="about__details-flex">
+            <div class="details-bio">
+              <p>
+                I am Matthew. I do stuff. Here is more about me. Some cheesy,
+                generic story that relates my passion and skills. Here is some
+                more inspirational text so I can see what this area of the page
+                looks like when there is at least five lines of text to display!
+              </p>
+              <button>Download CV</button>
+            </div>
+            <ul class="details-skills">
+              <li>Frontend</li>
+              <li>Backend</li>
+              <li>Game Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="snap-start">
       <header class="reveal">
@@ -132,7 +161,9 @@
           <div class="project-body">
             A collection of challenges where I turn designs into reality.
           </div>
-          <a href="https://github.com/Epitome87/front-end-mentor-journey">View Project</a>
+          <a href="https://github.com/Epitome87/front-end-mentor-journey"
+            >View Project</a
+          >
         </div>
         <div class="project-card">
           <div class="project-header">Lorem, ipsum dolor.</div>
@@ -162,63 +193,72 @@
         </h3>
       </header>
 
-      <div>
-        <p>Front-End</p>
-        <div class="tools-container">
-          <!-- CSS3 -->
-          <a href="https://www.w3schools.com/css/" target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-              alt="CSS3 Logo"
-          /></a>
+      <div class="tools-flex">
+        <div class="tools-frontend">
+          <p>Front-End</p>
+          <p>Knowledgeable front-end developer with an eye for detail</p>
+          <div class="tools-container">
+            <!-- CSS3 -->
+            <a href="https://www.w3schools.com/css/" target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS3 Logo"
+            /></a>
 
-          <!-- HTML5 -->
-          <a href="https://www.w3.org/html/" target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-              alt="HTML5 Logo"
-          /></a>
+            <!-- HTML5 -->
+            <a href="https://www.w3.org/html/" target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML5 Logo"
+            /></a>
 
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-              alt="Javascript Logo"
-          /></a>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="Javascript Logo"
+            /></a>
 
-          <!-- React -->
-          <a href="https://reactjs.org/" target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-              alt="React Logo"
-          /></a>
+            <!-- React -->
+            <a href="https://reactjs.org/" target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React Logo"
+            /></a>
 
-          <!-- SASS -->
-          <a href="https://sass-lang.com" target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-              alt="SASS Logo"
-          /></a>
+            <!-- SASS -->
+            <a href="https://sass-lang.com" target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+                alt="SASS Logo"
+            /></a>
 
-          <!-- TypeScript -->
-          <a href="https://www.typescriptlang.org/" target="_blank"
-            ><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-              alt="TypeScript Logo"
-          /></a>
+            <!-- TypeScript -->
+            <a href="https://www.typescriptlang.org/" target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="TypeScript Logo"
+            /></a>
+          </div>
         </div>
 
-        <div>
+        <div class="tools-backend">
           <p>Back-End</p>
+          <p>
+            Experience creating RESTful back-ends that give users the data they
+            need
+          </p>
           <div class="tools-container">
             <!-- ExpressJS -->
-            <a href="https://expressjs.com" target="_blank"
-              ><img
+            <a href="https://expressjs.com" target="_blank">
+              <!-- <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"
                 alt="Express Logo"
                 style="background-color: white"
-            /></a>
+              /> -->
+              ExpressJs
+            </a>
 
             <!-- MongoDB -->
             <a href="https://www.mongodb.com/" target="_blank"
@@ -267,7 +307,13 @@
             <span>or use your email for registration</span>
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
-            <textarea id="message" name="message" rows="5" cols="40" placeholder="Enter you comment here"></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              cols="40"
+              placeholder="Enter you comment here"
+            ></textarea>
             <button>Sign Up</button>
           </form>
         </div>
@@ -276,7 +322,9 @@
             <h1>Sign in</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
               <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your account</span>
@@ -290,12 +338,34 @@
           <div class="overlay">
             <div class="overlay-panel overlay-left">
               <h1>Contact Me!</h1>
-              <p>Fill out the form with your inquiry or connect with me on social media.</p>
+              <p>
+                Fill out the form with your inquiry or connect with me on social
+                media.
+              </p>
+              <!-- Social Bar? -->
+              <div class="contact-details">
+                <img src="images/icon-pin.svg" alt="Location pin" />
+                <p>Location</p>
+              </div>
+              <div class="contact-details">
+                <img src="images/icon-email.svg" alt="Email" />
+                <p>Email</p>
+              </div>
+              <div class="contact-details">
+                <img src="images/icon-mobile.svg" alt="" />
+                <p>Mobile Number</p>
+              </div>
+              <div>
+                <p>Languages</p>
+              </div>
               <button class="ghost" id="signIn">Sign In</button>
             </div>
             <div class="overlay-panel overlay-right">
               <h1>Message Sent!</h1>
-              <p>Thanks for reaching out! I will try my best to return your message in a timely manner.</p>
+              <p>
+                Thanks for reaching out! I will try my best to return your
+                message in a timely manner.
+              </p>
               <button class="ghost" id="signUp">Sign Up</button>
             </div>
           </div>

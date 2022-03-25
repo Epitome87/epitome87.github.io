@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
 /* 
 Tentative Color Scheme #1
@@ -12,7 +12,8 @@ Tentative Color Scheme #1
 
 :root {
   --color-primary-dark: #1e1e24;
-  --color-red: #f02446;
+  --color-red: #ff416c;
+  /* #f02446; */
 }
 
 *,
@@ -40,6 +41,7 @@ html {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  scrollbar-color: pink;
 }
 
 /* hide scrollbar but allow scrolling */
@@ -55,10 +57,26 @@ body::-webkit-scrollbar,
 } */
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--color-primary-dark);
   color: #e1dee9;
-  /* padding: 2rem; */
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: inherit;
+}
+
+body::-webkit-scrollbar-track {
+  /* background-color: orange; */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff416c;
+  /* var(--color-red) */
+  border-radius: 20px;
+  /* border: 3px solid green; */
 }
 
 /* Scroll-Snapping Stuff */
@@ -91,6 +109,25 @@ header {
   justify-content: space-between;
   padding: 1rem 2rem;
   font-size: 1.5rem;
+
+  /* 
+  position: sticky;
+  top: 0px;
+  z-index: 10; */
+
+  /* position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid red;
+  margin: 55px auto;
+  background: #000; */
+  /* -117px; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 #navbar-main ul {
@@ -100,18 +137,31 @@ header {
   justify-content: flex-end;
 }
 
+#navbar-main li {
+  position: relative;
+}
+
+#navbar-main li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 5px;
+  display: block;
+  margin-top: 4px;
+  right: 0;
+  background: var(--color-red);
+  transition: width 0.2s ease;
+}
+
+#navbar-main li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 #navbar-main a:link,
 #navbar-main a:visited {
   color: #e1dee9;
   text-decoration: none;
-}
-
-#navbar-main a:hover {
-  transform: scale(1.5);
-  color: pink;
-}
-
-#navbar-main a:active {
 }
 
 @keyframes shrink-grow {
@@ -136,8 +186,13 @@ header {
 
 #particles-js {
   position: relative;
-  height: 100vh;
-  width: 100%;
+  position: fixed;
+  /* height: 100vh;
+  width: 100%; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 main {
@@ -266,6 +321,53 @@ main #subtitle_span-adjective {
   filter: hue-rotate(360deg);
 }
 
+#about {
+  margin: 0 2rem;
+  min-height: 100vh;
+}
+
+#about .about-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+#about .about-avatar {
+  /* margin: 0 auto;  */
+  flex-basis: 16%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#about .about-flex img {
+  background-color: hsl(240, 9%, 23%);
+}
+
+#about .about__details {
+  flex-basis: 60%;
+  /* max-width: 600px; */
+}
+
+#about .about__details-flex {
+  display: flex;
+  gap: 2rem;
+  background-color: hsl(240, 9%, 23%);
+  border-radius: 15px;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+}
+
+#about .about__details-flex .details-bio {
+  flex-basis: 50%;
+}
+
+#about .about__details-flex .details-skills {
+  flex-basis: 50%;
+}
+
 #projects {
   min-height: 100vh;
   scroll-snap-align: start;
@@ -297,7 +399,7 @@ main #subtitle_span-adjective {
       rgba(0, 0, 0, 0.85),
       rgba(0, 0, 0, 0.6)
     ),
-    url("images/preview-flat-ui-clone.png");
+    url('images/preview-flat-ui-clone.png');
   background-size: cover;
 }
 
@@ -307,7 +409,7 @@ main #subtitle_span-adjective {
       rgba(0, 0, 0, 0.85),
       rgba(0, 0, 0, 0.6)
     ),
-    url("images/preview-fylo.png");
+    url('images/preview-fylo.png');
   background-size: contain;
 }
 
@@ -349,10 +451,49 @@ main #subtitle_span-adjective {
 
 #toolkit {
   min-height: 100vh;
+  margin: 0 2rem;
 }
 
 #toolkit header {
   padding-top: 2rem;
+}
+
+#toolkit .tools-flex {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#toolkit .tools-frontend {
+  background-color: rgba(255, 65, 108, 0.7);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  flex-basis: 100%;
+  min-height: 80vh;
+}
+
+#toolkit .tools-frontend p:first-of-type {
+  font-size: 1.75rem;
+}
+
+#toolkit .tools-frontend p:nth-of-type(2) {
+  font-size: 1.35rem;
+}
+
+#toolkit .tools-backend {
+  background-color: rgba(255, 65, 108);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  flex-basis: 100%;
+  min-height: 80vh;
+}
+
+#toolkit .tools-backend p:first-of-type {
+  font-size: 1.75rem;
+}
+
+#toolkit .tools-backend p:nth-of-type(2) {
+  font-size: 1.35rem;
 }
 
 #toolkit .tools-container {
@@ -367,7 +508,8 @@ main #subtitle_span-adjective {
 }
 
 #toolkit .tools-container img {
-  width: 150px;
+  width: 50px;
+  aspect-ratio: 1;
   transition: 0.1s ease-in;
 }
 
@@ -392,42 +534,6 @@ main #subtitle_span-adjective {
 
   /* Adjust for curve */
   margin-top: 2rem;
-}
-
-/* Flippable Card - Frontside is form, backside is Thank You message */
-.flippable-form {
-  position: relative;
-  width: 600px;
-  height: 600px;
-  left: 0;
-  top: 0;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  margin-top: 2rem;
-  /* background-color: rgba(27, 27, 50, 0.8); */
-  /* transition: 1s ease-in; */
-}
-
-.flippable-form > form,
-.flippable-form > div {
-  position: absolute;
-  backface-visibility: hidden;
-  transition: 1s ease-in;
-  width: 600px;
-  height: 600px;
-  background-color: rgba(27, 27, 50, 0.8);
-}
-
-.flippable-form > div {
-  transform: rotateY(180deg);
-}
-
-.flippable-form:hover > form {
-  transform: rotateY(-180deg);
-}
-
-.flippable-form:hover > div {
-  transform: rotateY(0deg);
 }
 
 /* Contact Me Form */
@@ -477,7 +583,7 @@ footer {
 }
 
 .hover-underline-animation:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -759,6 +865,7 @@ input {
 
 .overlay {
   background: #ff416c;
+  /* #ff416c; */
   background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
   background: linear-gradient(to right, #ff4b2b, #ff416c);
   background-repeat: no-repeat;
@@ -822,4 +929,20 @@ input {
   margin: 0 5px;
   height: 40px;
   width: 40px;
+}
+
+#contact .contact-details {
+  display: flex;
+  width: 100%;
+  border: 2px solid white;
+}
+
+#contact .contact-details img {
+  width: 25px;
+  aspect-ratio: 1;
+}
+
+#contact .contact-details svg {
+  color: white;
+  fill: white;
 }
