@@ -1,0 +1,58 @@
+/* Initial Design Ideas:  
+- Grid for layout, maybe 3 small grids and 2 larger grids (for my best two projects)
+- Grids contain only a preview picture of the project when not hovered
+- When hovered, a transparent primary (red) overlay pops up with some info about the project, CTA button to learn more
+- Mobile: 1 column of grids
+- 500px or so, 2 columns
+- Desktop: 2 rows, top row has 3 columns, bottom row has 2
+
+ <!-- My Projects Section -->
+    <section id="projects">
+      <h3 class="projects__header">Projects</h3>
+      <div class="projects__grid">
+        <div class="project">
+          <div class="project__overlay">
+            <h4 class="project__header"></h4>
+          </div>
+        </div>
+      </div>
+    </section>
+*/
+
+#projects {
+  background-color: green * 0.1;
+
+  .projects__header {
+  }
+
+  .projects__grid {
+    display: grid;
+    // On mobile, singular column of projects
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    gap: 2rem;
+
+    .project:nth-of-type(1) {
+      background-image: url(../images/preview-flat-ui-clone.png);
+    }
+    .project:nth-of-type(2) {
+      background-image: url(../images/preview-fylo.png);
+    }
+    .project:nth-of-type(3) {
+      background-image: url(../images/preview-flat-ui-clone.png);
+    }
+    .project:nth-of-type(4) {
+      background-image: url(../images/preview-fylo.png);
+    }
+    .project:nth-of-type(5) {
+      background-image: url(../images/preview-flat-ui-clone.png);
+    }
+  }
+
+  .project {
+    height: 350px;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}

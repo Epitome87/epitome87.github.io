@@ -1,0 +1,304 @@
+/**************** Colors ******************/
+/**************** Fonts *******************/
+/*************** Spacing ******************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::-moz-selection {
+  background-color: #ff0055;
+  color: white;
+  text-decoration: underline;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);
+  stroke-width: 5px;
+}
+
+*::selection {
+  background-color: #ff0055;
+  color: white;
+  text-decoration: underline;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);
+  stroke-width: 5px;
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1e1e24;
+  color: #e0dde9;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: inherit;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff426e;
+  border-radius: 20px;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2rem;
+  text-align: center;
+  /* Headers need more white-space! */
+}
+
+section {
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 899px) {
+  section {
+    padding: 4rem 2rem;
+  }
+}
+
+/*
+    <header class="header">
+      <div class="header__logo">
+        <p>MBM</p>
+      </div>
+      <nav>
+        <ul>
+          <li>About</li>
+          <li>Projects</li>
+          <li>Skills</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+*/
+header {
+  padding: 1rem 2rem;
+  background-color: #1a0000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+  list-style-type: none;
+}
+
+nav li {
+  position: relative;
+}
+
+nav li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 5px;
+  display: block;
+  margin-top: 4px;
+  right: 0;
+  background: #ff426e;
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+
+nav li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+nav a:link,
+nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#hero {
+  background-color: #1a1a00;
+}
+
+#about {
+  background-color: #1a1100;
+}
+
+/* Initial Design Ideas:  
+- Grid for layout, maybe 3 small grids and 2 larger grids (for my best two projects)
+- Grids contain only a preview picture of the project when not hovered
+- When hovered, a transparent primary (red) overlay pops up with some info about the project, CTA button to learn more
+- Mobile: 1 column of grids
+- 500px or so, 2 columns
+- Desktop: 2 rows, top row has 3 columns, bottom row has 2
+
+ <!-- My Projects Section -->
+    <section id="projects">
+      <h3 class="projects__header">Projects</h3>
+      <div class="projects__grid">
+        <div class="project">
+          <div class="project__overlay">
+            <h4 class="project__header"></h4>
+          </div>
+        </div>
+      </div>
+    </section>
+*/
+#projects {
+  background-color: #000d00;
+}
+
+#projects .projects__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(275px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  gap: 2rem;
+}
+
+#projects .projects__grid .project:nth-of-type(1) {
+  background-image: url(../images/preview-flat-ui-clone.png);
+}
+
+#projects .projects__grid .project:nth-of-type(2) {
+  background-image: url(../images/preview-fylo.png);
+}
+
+#projects .projects__grid .project:nth-of-type(3) {
+  background-image: url(../images/preview-flat-ui-clone.png);
+}
+
+#projects .projects__grid .project:nth-of-type(4) {
+  background-image: url(../images/preview-fylo.png);
+}
+
+#projects .projects__grid .project:nth-of-type(5) {
+  background-image: url(../images/preview-flat-ui-clone.png);
+}
+
+#projects .project {
+  height: 350px;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#contact {
+  background-color: #00001a;
+}
+
+#footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #1a0000;
+}
+
+#footer .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#footer .social-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+#hero a:hover,
+#footer a:hover {
+  background-color: white;
+}
+
+#hero a svg,
+#footer a svg {
+  fill: white;
+  width: 65%;
+  height: 65%;
+}
+
+#hero a:hover svg,
+#footer a:hover svg {
+  fill: #ff426e;
+}
+
+#footer .footer__copyright span:nth-child(2) {
+  color: #ff426e;
+}
+
+#hero a svg,
+#footer a svg {
+  fill: white;
+  width: 65%;
+  height: 65%;
+}
+
+#hero a:hover svg,
+#footer a:hover svg {
+  fill: #ff426e;
+}
+
+#footer .footer__copyright span:nth-child(2) {
+  color: #ff426e;
+}
+/*# sourceMappingURL=style.css.map */

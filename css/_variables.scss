@@ -1,0 +1,34 @@
+/**************** Colors ******************/
+$color-primary-dark: hsl(240, 9%, 13%);
+$color-red: hsl(346, 100%, 63%);
+$color-selection: hsl(340, 100%, 50%);
+$color-white: hsl(0, 0%, 100%);
+
+/**************** Fonts *******************/
+$font-color-primary: hsl(256, 20%, 89%);
+$font-size-body: 1rem;
+$font-size-heading: 2rem;
+
+/*************** Spacing ******************/
+// Margin in "Container"
+$margin-mobile: 1rem;
+$margin-desktop: 2rem;
+
+// Breakpoints
+$max-width: 1200px;
+
+$breakpoints: (
+  sm: 499px,
+  md: 899px,
+  lg: 999px,
+  xl: 1399px,
+);
+
+// Mixin for media queries -- mobile-first
+@mixin breakpoint($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}

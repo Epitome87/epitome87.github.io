@@ -1,0 +1,60 @@
+/*
+    <header class="header">
+      <div class="header__logo">
+        <p>MBM</p>
+      </div>
+      <nav>
+        <ul>
+          <li>About</li>
+          <li>Projects</li>
+          <li>Skills</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+*/
+
+header {
+  padding: 1rem 2rem;
+  background-color: red * 0.1;
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+  }
+}
+
+nav {
+  ul {
+    display: flex;
+    gap: 3rem;
+    list-style-type: none;
+  }
+
+  li {
+    position: relative;
+  }
+
+  li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    display: block;
+    margin-top: 4px;
+    right: 0;
+    background: $color-red;
+    transition: width 0.2s ease;
+  }
+
+  li:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  a:link,
+  a:visited {
+    color: $color-white;
+    text-decoration: none;
+  }
+}

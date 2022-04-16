@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: $color-selection;
+  color: white;
+  text-decoration: underline;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);
+  stroke-width: 5px;
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $color-primary-dark;
+  color: $font-color-primary;
+  line-height: 1.6;
+
+  // display: grid;
+  // grid-template-columns: 2rem 1fr 2rem;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: inherit;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: $color-primary-dark;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $color-red;
+  border-radius: 20px;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2rem;
+  text-align: center;
+
+  /* Headers need more white-space! */
+  // padding-top: 4rem;
+  // padding-bottom: 2rem;
+}
+
+// Sections will typically share the same margins
+section {
+  padding: 2rem $margin-mobile;
+  margin: 0 auto;
+  max-width: $max-width;
+
+  @include breakpoint(md) {
+    padding: 4rem $margin-desktop;
+  }
+}
