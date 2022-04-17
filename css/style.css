@@ -601,13 +601,14 @@ img {
 }
 
 .about__traits {
-  color: #bfbfbf;
+  background-color: #18181d;
+  border-block: 1px solid #ff426e;
   margin-block: 5rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  row-gap: 1rem;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  row-gap: 0.5rem;
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
   -webkit-box-pack: justify;
@@ -629,8 +630,26 @@ img {
 }
 
 .about .trait__header {
-  font-size: 1.5rem;
+  color: #cccccc;
+  font-size: 1.1rem;
   font-weight: 700;
+}
+
+@media screen and (min-width: 1399px) {
+  .about .trait__header {
+    font-size: 1.5rem;
+  }
+}
+
+.about .trait__body {
+  color: #bfbfbf;
+  font-size: 0.88rem;
+}
+
+@media screen and (min-width: 1399px) {
+  .about .trait__body {
+    font-size: 1.1rem;
+  }
 }
 
 /* Initial Design Ideas:  
