@@ -2,6 +2,18 @@
 /**************** Fonts *******************/
 /*************** Spacing ******************/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-text: white;
+    --clr-background: #1e1e24;
+  }
+}
+
+[color-scheme='dark'] {
+  --clr-text: white;
+  --clr-background: #1e1e24;
+}
+
 *,
 *::before,
 *::after {
@@ -43,6 +55,8 @@ body {
   line-height: 1.6;
   background-color: #1e1e24;
   color: #e0dde9;
+  background-color: var(--clr-background);
+  color: var(--clr-text);
 }
 
 /* Custom Scrollbar */
@@ -60,9 +74,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-  max-width: 1400px;
+  padding: 2rem 1rem;
   margin: 0 auto;
-  padding: 2rem;
+  max-width: 1400px;
+}
+
+@media screen and (min-width: 899px) {
+  .container {
+    padding: 4rem 2rem;
+  }
 }
 
 .hidden {
@@ -75,9 +95,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 3rem;
+  font-size: 1.8rem;
   text-align: center;
   /* Headers need more white-space! */
+}
+
+@media screen and (min-width: 899px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 3rem;
+  }
 }
 
 input,
@@ -96,6 +127,93 @@ section {
 @media screen and (min-width: 899px) {
   section {
     padding: 4rem 2rem;
+  }
+}
+
+button {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-family: inherit;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  border: 3px solid #ff426e;
+  color: var(--clr-text);
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: #ff426e;
+}
+
+#scroller-container {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.scroller-one,
+.scroller-two {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-animation: move 20s infinite linear;
+          animation: move 20s infinite linear;
+}
+
+.scroller-two {
+  width: 100%;
+  top: 100px;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+  -webkit-animation: move 20s infinite linear;
+          animation: move 20s infinite linear;
+  animation-direction: reverse;
+}
+
+.scroller-one .trait,
+.scroller-two .trait {
+  margin: 0 0.5em;
+  display: inline-block;
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translate(105%, 0);
+            transform: translate(105%, 0);
+  }
+  /* Finish changes by here */
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: translate(105%, 0);
+            transform: translate(105%, 0);
+  }
+  /* Finish changes by here */
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
   }
 }
 
@@ -160,6 +278,27 @@ nav a:visited {
   text-decoration: none;
 }
 
+#particles-js {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1e1e24;
+}
+
+#particles-js::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 30, 36, 0)), color-stop(70%, rgba(30, 30, 36, 0.5)), to(#1e1e24));
+  background: linear-gradient(to bottom, rgba(30, 30, 36, 0) 0%, rgba(30, 30, 36, 0.5) 70%, #1e1e24 100%);
+}
+
 .hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -176,6 +315,29 @@ nav a:visited {
   text-transform: uppercase;
 }
 
+.hero__cta {
+  margin-top: 10rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  border: 3px solid #ff426e;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.hero__cta:hover {
+  background-color: #ff426e !important;
+}
+
 @media screen and (min-width: 899px) {
   .hero__header {
     letter-spacing: 15px;
@@ -184,14 +346,21 @@ nav a:visited {
 
 .hero__header .first-name {
   font-size: 3.3rem;
-  color: #a2d2ff;
   display: block;
+  display: inline-block;
   padding: 0;
   margin: 0;
   line-height: 0.8;
   background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 499px) {
+  .hero__header .first-name {
+    font-size: 5rem;
+  }
 }
 
 @media screen and (min-width: 899px) {
@@ -203,12 +372,18 @@ nav a:visited {
 .hero__header .last-name {
   font-size: 3rem;
   background: #a2d2ff;
-  color: #1e1e24;
+  color: var(--clr-background);
   display: inline-block;
   padding: 0 1rem;
   border-radius: 5px;
   line-height: 1;
   background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+}
+
+@media screen and (min-width: 499px) {
+  .hero__header .last-name {
+    font-size: 4.65rem;
+  }
 }
 
 @media screen and (min-width: 899px) {
@@ -229,27 +404,35 @@ nav a:visited {
   }
 }
 
-/*
-- I anticipate that this section will have a small, pixelated version of my picture. 
-- It will also have a bar (perhaps with icons) with a heading and short sentence. These will probably be characteristics that make me a good web developer. Or maybe characteristics of my work???
-- A short introduction of me as it relates to web development. Possibly a call-to-action to get in touch
-- Something else to fill the space?
+@-webkit-keyframes breathe {
+  0% {
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
+  100% {
+    -webkit-transform: translateY(25px) scale(1.05);
+            transform: translateY(25px) scale(1.05);
+  }
+}
 
-<section id="about">
-      <h2 class="about__header">About</h2>
-      <div class="about__avatar">
-        <img src="images/matthew.png" />
-      </div>
-      <div class="about__body"></div>
-      <div class="about__traits">
-        <div class="trait">
-          <div class="trait__image"></div>
-          <div class="trait__header"></div>
-          <p class="trait__body"></p>
-        </div>
-      </div>
-    </section>
-*/
+@keyframes breathe {
+  0% {
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
+  100% {
+    -webkit-transform: translateY(25px) scale(1.05);
+            transform: translateY(25px) scale(1.05);
+  }
+}
+
+.center {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 figure {
   --hov: 0;
   --not-hov: calc(1 - var(--hov));
@@ -287,7 +470,6 @@ figure::before {
   padding: clamp(4em, 10vw, 7.5em);
   border-radius: 50%;
   background-color: #ff426e;
-  background-color: #18181d;
 }
 
 figure:hover {
@@ -301,8 +483,50 @@ img {
           transform: translateY(calc((0.5 - var(--hov)) * 10%)) scale(calc(1.25 + 0.05 * var(--hov)));
 }
 
+.about {
+  padding: 0;
+  margin: 0 auto;
+  max-width: unset;
+  position: relative;
+}
+
+@media screen and (min-width: 899px) {
+  .about {
+    padding: 0;
+  }
+}
+
 .about__header {
   margin-bottom: 2rem;
+  position: absolute;
+  font-size: 3.75rem;
+  line-height: 1;
+  top: -2rem;
+  left: 0;
+  /* Create the gradient. */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 66, 110, 0.5)), color-stop(70%, rgba(255, 66, 110, 0.1)), to(rgba(255, 66, 110, 0)));
+  background-image: linear-gradient(to bottom, rgba(255, 66, 110, 0.5) 0%, rgba(255, 66, 110, 0.1) 70%, rgba(255, 66, 110, 0));
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation: breathe 4s infinite ease-in-out alternate;
+          animation: breathe 4s infinite ease-in-out alternate;
+}
+
+@media screen and (min-width: 899px) {
+  .about__header {
+    font-size: 10rem;
+    top: -5rem;
+  }
 }
 
 .about__introduction {
@@ -354,16 +578,18 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 1rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #ff426e;
   background-color: #18181d;
+  border: 5px solid #ff426e;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  text-align: justify;
   padding: 1rem;
   border-radius: 15px;
-  border: 5px solid #ff426e;
 }
 
 @media screen and (min-width: 899px) {
@@ -375,6 +601,7 @@ img {
 }
 
 .about__traits {
+  color: #bfbfbf;
   margin-block: 5rem;
   display: -ms-grid;
   display: grid;
@@ -398,29 +625,12 @@ img {
 
 .about .trait {
   text-align: center;
+  padding: 0.5rem 1rem;
 }
 
 .about .trait__header {
   font-size: 1.5rem;
   font-weight: 700;
-}
-
-.about button {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  font-family: inherit;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 0.5rem 2rem;
-  text-transform: uppercase;
-  border: 3px solid #ff426e;
-  color: white;
-  background-color: transparent;
-}
-
-.about button:hover {
-  background-color: #ff426e;
 }
 
 /* Initial Design Ideas:  
@@ -480,9 +690,6 @@ img {
   background-position: center center;
 }
 
-/*
-I anticipate that this section will have two parts -- a list of the courses I taught, and then a list of frontend/backend skills
-*/
 .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,19 +727,18 @@ I anticipate that this section will have two parts -- a list of the courses I ta
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 1rem;
-  color: #ff426e;
 }
 
 .skill {
+  color: #ff426e;
+  color: white;
   background-color: #24242b;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: #d6385d;
   padding: 0.2rem 0.5rem;
   border-radius: 15px;
-}
-
-.education,
-.skills {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  font-weight: 700;
 }
 
 .experience__header {
@@ -553,8 +759,8 @@ I anticipate that this section will have two parts -- a list of the courses I ta
   position: absolute;
   top: 1px;
   left: -1.75rem;
-  padding: 0.1rem;
-  background-color: #1e1e24;
+  padding: 0.1rem 0.1rem 0.2rem 0.1rem;
+  background-color: var(--clr-background);
 }
 
 @media screen and (min-width: 899px) {
@@ -617,6 +823,29 @@ Contact form will possibly contain:
       </div>
     </section>
 */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #b3b3b3;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #b3b3b3;
+}
+
+.contact__info > p,
+.contact__form > p {
+  color: #b3b1ba;
+  margin-bottom: 2rem;
+}
+
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -626,6 +855,11 @@ Contact form will possibly contain:
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
+}
+
+.contact h4,
+.contact h5 {
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 899px) {
@@ -699,9 +933,6 @@ Contact form will possibly contain:
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 @media screen and (min-width: 899px) {
@@ -755,9 +986,30 @@ Contact form will possibly contain:
   }
 }
 
-.contact__form p {
-  color: #b3b1ba;
-  margin-bottom: 2rem;
+.contact__form .form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 499px) {
+  .contact__form .form__row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .contact__form .form__row > * {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .contact__form form {
@@ -775,7 +1027,7 @@ Contact form will possibly contain:
   height: 50px;
   border-radius: 5px;
   color: white;
-  background-color: #1e1e24;
+  background-color: var(--clr-background);
   border: none;
   border: 3px solid #ff426e;
   padding-left: 1rem;
@@ -784,29 +1036,11 @@ Contact form will possibly contain:
 .contact__form form textarea {
   border-radius: 5px;
   color: white;
-  background-color: #1e1e24;
+  background-color: var(--clr-background);
   border: none;
   border: 3px solid #ff426e;
   padding-left: 1rem;
   padding-top: 1rem;
-}
-
-.contact__form form button {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  font-family: inherit;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 0.5rem 2rem;
-  text-transform: uppercase;
-  border: 3px solid #ff426e;
-  color: white;
-  background-color: transparent;
-}
-
-.contact__form form button:hover {
-  background-color: #ff426e;
 }
 
 .footer {

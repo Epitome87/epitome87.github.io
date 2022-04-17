@@ -32,6 +32,8 @@ body {
   line-height: 1.6;
   background-color: $color-primary-dark;
   color: $font-color-primary;
+  background-color: var(--clr-background);
+  color: var(--clr-text);
 }
 
 /* Custom Scrollbar */
@@ -49,9 +51,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-  max-width: $max-width;
+  padding: 2rem $margin-mobile;
   margin: 0 auto;
-  padding: 2rem;
+  max-width: $max-width;
+
+  @include breakpoint(md) {
+    padding: 4rem $margin-desktop;
+  }
 }
 
 .hidden {
@@ -64,12 +70,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: $font-size-heading;
+  font-size: $font-size-heading * 0.6;
   text-align: center;
+
+  // Headings have way too much spacing if they take multiple lines!
+  // line-height: 1;
 
   /* Headers need more white-space! */
   // padding-top: 4rem;
   // padding-bottom: 2rem;
+
+  @include breakpoint(md) {
+    font-size: $font-size-heading;
+  }
 }
 
 input,
@@ -87,5 +100,78 @@ section {
 
   @include breakpoint(md) {
     padding: 4rem $margin-desktop;
+  }
+}
+
+button {
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: $font-size-body;
+  border-radius: $subtle;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  border: 3px solid $color-red;
+  color: var(--clr-text);
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: $color-red;
+}
+
+// TODO: TESTING
+#scroller-container {
+  // height: 150px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid red;
+  display: flex;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+$scroll-duration: 20s;
+
+.scroller-one,
+.scroller-two {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: move $scroll-duration infinite linear;
+}
+
+.scroller-two {
+  width: 100%;
+  top: 100px;
+  transform: translate(100%, 0);
+  animation: move $scroll-duration infinite linear;
+  // animation-delay: $scroll-duration / 2;
+  animation-direction: reverse;
+  // animation-delay: math.div($scroll-duration, 2);
+}
+
+.scroller-one .trait,
+.scroller-two .trait {
+  margin: 0 0.5em;
+  display: inline-block;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(105%, 0);
+  }
+
+  /* Finish changes by here */
+  // 99% {
+  //   transform: translate(-100%, 0);
+  // }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    transform: translate(-100%, 0);
   }
 }

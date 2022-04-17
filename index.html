@@ -32,36 +32,94 @@
         <span class="last-name">McGrath</span>
       </h1>
       <p class="hero__subheader">Bridges dreams and reality through code</p>
+      <a class="hero__cta" href="#projects">View Work</a>
     </section>
+
+    <!-- TODO: Eh, not sure about these particles any more -->
+    <!-- <div class="test"></div> -->
+    <div id="particles-js" class="particles-js"></div>
 
     <!-- About Me Section -->
     <section class="about">
       <!-- <h2 class="about__header">About</h2> -->
-      <h2 class="about__header">Who I am</h2>
-      <div class="about__introduction">
-        <div class="center">
-          <figure>
-            <img src="images/matthew.png" alt="Matthew McGrath" />
-          </figure>
+      <div class="container">
+        <h2 class="about__header">Who I am</h2>
+        <div class="about__introduction">
+          <div class="center">
+            <figure>
+              <img src="images/matthew.png" alt="Matthew McGrath" />
+            </figure>
+          </div>
+          <!-- TODO: This wall of text is ugly on mobile -->
+          <div class="about__body">
+            <p>
+              I'm Matthew McGrath, a long-time programmer who has recently
+              shifted attention away from game development and began an exciting
+              journey in web development. Since my first 'Hello, World' in high
+              school, I have had an unbound curiosity for code and the
+              problem-solving that accompanies it. With a strong persuit for
+              knowledge, I am perpetually improving my full-stack skills -- one
+              line of code at a time. Outside of programming, I enjoy tinkering
+              with piano and guitar, online gaming, and walking Leon (my
+              incredibly handsome Chow)
+            </p>
+            <!-- <p>
+              Outside of programming, I enjoy tinkering with piano and guitar,
+              online gaming, and walking Leon (my incredibly handsome Chow)
+            </p> -->
+            <button>Download CV</button>
+          </div>
         </div>
-        <div class="about__body">
-          <p>
-            I'm Matthew McGrath, a long-time programmer who has recently shifted
-            attention away from game development and began an exciting journey
-            in web development. Since my first 'Hello, World' in high school, I
-            have had an unbound curiosity for code and the problem-solving that
-            accompanies it. With a strong persuit for knowledge, I am
-            perpetually improving my full-stack skills -- one line of code at a
-            time.
-          </p>
-          <p></p>
-          <p>
-            Outside of programming, I enjoy tinkering with piano and guitar,
-            online gaming, and walking Leon (my incredibly handsome Chow)
-          </p>
-          <button>Download CV</button>
-        </div>
+
+        <!-- TODO: TEST -->
       </div>
+
+      <!-- <div id="scroller-container">
+        <div class="scroller-one">
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Passionate</div>
+            <p class="trait__body">Consistently coding for half my life</p>
+          </div>
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Team Player</div>
+            <p class="trait__body">Able to work with and learn from others</p>
+          </div>
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Adaptable</div>
+            <p class="trait__body">Recognize & study emerging trends</p>
+          </div>
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Versatile</div>
+            <p class="trait__body">Frontend, backend, games</p>
+          </div>
+        </div>
+        <div class="scroller-two">
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Passionate</div>
+            <p class="trait__body">Consistently coding for half my life</p>
+          </div>
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Team Player</div>
+            <p class="trait__body">Able to work with and learn from others</p>
+          </div>
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Adaptable</div>
+            <p class="trait__body">Recognize & study emerging trends</p>
+          </div>
+          <div class="trait">
+            <div class="trait__image"></div>
+            <div class="trait__header">Versatile</div>
+            <p class="trait__body">Frontend, backend, games</p>
+          </div>
+        </div>
+      </div> -->
 
       <div class="about__traits">
         <div class="trait">
@@ -89,13 +147,12 @@
 
     <!-- Experience/Skills Section -->
     <section class="experience">
-      <h4 class="experience__header">Experience</h4>
+      <h4 class="experience__header">Skills & Experience</h4>
       <div class="flex-container">
         <div class="skills">
           <p class="skills__header">Frontend</p>
           <p class="skills__subheader">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos,
-            ipsam!
+            Seeing ideas grow inside of the browser is always exciting!
           </p>
           <div class="skills__list">
             <div class="skill">React</div>
@@ -107,8 +164,7 @@
           </div>
           <p class="skills__header">Backend</p>
           <p class="skills__subheader">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos,
-            ipsam!
+            Unseen but never unnoticed, crafting the perfect algorithms!
           </p>
           <div class="skills__list">
             <div class="skill">Node.js</div>
@@ -117,13 +173,14 @@
             <div class="skill">Postgres</div>
             <div class="skill">TailwindCSS</div>
           </div>
-          <p class="skills__header">Delving Into</p>
+          <p class="skills__header">Never-Ending Journey</p>
           <p class="skills__subheader">Some skills I'm currently aquiring!</p>
           <div class="skills__list">
             <div class="skill">TypeScript</div>
             <div class="skill">React Native</div>
             <div class="skill">Chakra UI</div>
             <div class="skill">Three.js</div>
+            <div class="skill">Unity 3D</div>
           </div>
         </div>
         <div class="education">
@@ -166,7 +223,7 @@
     </section>
 
     <!-- My Projects Section -->
-    <section class="projects">
+    <section class="projects" id="projects">
       <h3 class="projects__header">Projects</h3>
       <p class="projects__subheader">A small selection of my work</p>
       <div class="projects__grid">
@@ -223,11 +280,7 @@
             <p>Mon - Fri 8:00 AM to 8 PM</p>
           </div>
         </address>
-        <div>
-          <p>Social Info</p>
-          <p>Something</p>
-          <p>Something else</p>
-        </div>
+
         <!-- <div class="socials">
           <a
             class="social-link"
@@ -295,8 +348,10 @@
           a kind greeting! 😁
         </p>
         <form name="contact">
-          <input type="text" name="name" placeholder="Your Full Name" />
-          <input type="email" name="email" placeholder="Your Email" />
+          <div class="form__row">
+            <input type="text" name="name" placeholder="Your Full Name" />
+            <input type="email" name="email" placeholder="Your Email" />
+          </div>
           <textarea
             name="message"
             cols="30"
@@ -374,5 +429,9 @@
         <span>&copy; 2022</span>
       </div>
     </footer>
+
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

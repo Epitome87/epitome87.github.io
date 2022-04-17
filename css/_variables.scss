@@ -47,3 +47,43 @@ $breakpoints: (
     @content;
   }
 }
+
+$colorsDark: (
+  clr-text: $color-white,
+  clr-background: $color-primary-dark,
+);
+
+$colorsLight: (
+  clr-text: $color-primary-dark,
+  clr-background: $color-white,
+);
+
+// Dark is default
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $name, $color in $colorsDark {
+      --#{$name}: #{$color};
+    }
+  }
+}
+
+[color-scheme='dark'] {
+  @each $name, $color in $colorsDark {
+    --#{$name}: #{$color};
+  }
+}
+
+// TODO: Light Mode is ugly at the moment
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     @each $name, $color in $colorsLight {
+//       --#{$name}: #{$color};
+//     }
+//   }
+// }
+
+// [color-scheme='light'] {
+//   @each $name, $color in $colorsLight {
+//     --#{$name}: #{$color};
+//   }
+// }

@@ -41,7 +41,6 @@ html {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-  scrollbar-color: pink;
 }
 
 /* hide scrollbar but allow scrolling */
@@ -69,7 +68,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  /* background-color: orange; */
+  background-color: var(--color-primary-dark);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -99,9 +98,23 @@ body::-webkit-scrollbar-thumb {
   scroll-snap-align: end;
 }
 
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
 header {
   font-size: 2rem;
   text-align: center;
+
+  /* Headers need more white-space! */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 }
 
 #header-main {
@@ -189,6 +202,7 @@ header {
   position: fixed;
   /* height: 100vh;
   width: 100%; */
+  z-index: -1;
   top: 0;
   left: 0;
   right: 0;
@@ -204,20 +218,24 @@ main {
   justify-content: center;
 
   /* Particle */
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   left: 0;
   top: 0;
-  min-height: calc(100vh - 50px);
+  /* min-height: calc(100vh - 50px); */
+  min-height: 100vh;
 }
 
 main header {
-  width: 650px;
   text-transform: uppercase;
   padding-top: 5rem;
+
+  /* TODO: Making more responsive */
+  max-width: 650px;
 }
 
 main h1 {
+  /* border: 2px solid red; */
 }
 
 main #name_span--first {
@@ -285,6 +303,30 @@ main #subtitle_span-adjective {
   color: #e05263;
 }
 
+/* TODO: Keep for reference but replace with mobile-first queries */
+@media screen and (max-width: 600px) {
+  main #name_span--first {
+    font-size: 3rem;
+    border: 1px solid yellow;
+    display: inline;
+  }
+
+  main #name_span--last {
+    font-size: 3rem;
+    border: 1px solid yellow;
+    display: inline;
+  }
+  h1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socials {
+    display: hidden;
+    visibility: none;
+  }
+}
+
 .avatar-card {
   position: relative;
   /* height: 450px;
@@ -322,123 +364,227 @@ main #subtitle_span-adjective {
 }
 
 #about {
-  margin: 0 2rem;
+  padding: 0 2rem;
   min-height: 100vh;
+  background-color: rgba(53, 53, 64, 0.9);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  /* backdrop-filter: blur(8px); */
+}
+
+#about header {
+  position: relative;
+  text-align: left;
+}
+
+#about header h2 {
+  position: absolute;
+  font-size: 5rem;
+  /* border: 2px solid red; */
+  line-height: 1;
+
+  top: 0;
+  left: 0;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.1) 70%,
+    rgba(255, 255, 255, 0)
+  );
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  transform-origin: left;
+  animation: breathe 4s infinite ease-in-out alternate;
 }
 
 #about .about-flex {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 2px solid red;
-  gap: 5rem;
+  align-items: start;
+  gap: 10rem;
   margin-top: 5rem;
 }
 
+@media screen and (min-width: 600px) {
+  #about .about-flex {
+    flex-direction: row;
+  }
+
+  #about header {
+    margin-top: 5rem;
+  }
+
+  #about header h2 {
+    font-size: 10rem;
+  }
+
+  #about .about-details-flex {
+    flex-direction: row;
+  }
+}
+
+@keyframes breathe {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(25px) scale(1.05);
+  }
+}
+
 #about .about-avatar {
-  /* margin: 0 auto;  */
-  flex-basis: 16%;
+  flex-basis: 20%;
   border-radius: 50%;
+  cursor: pointer;
   overflow: hidden;
+  /* background-color: rgba(224, 82, 99, 1); */
+  /* animation: breathe 4s infinite ease-in-out alternate; */
+}
+
+#about .about-avatar:hover img {
+  transform: scale(1.1);
 }
 
 #about .about-flex img {
-  background-color: hsl(240, 9%, 23%);
+  background-color: rgba(53, 53, 64, 0.75);
+  background-color: rgba(224, 82, 99, 0.8);
+  border-radius: 50%;
+  transition: transform 0.3s ease-in;
 }
 
 #about .about__details {
   flex-basis: 60%;
+  background-color: rgba(224, 82, 99, 0.8);
+  border-radius: 25px;
+  text-align: justify;
   /* max-width: 600px; */
+  /* backdrop-filter: blur(8px); */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 #about .about__details-flex {
+  font-size: 1.25rem;
   display: flex;
-  gap: 2rem;
-  background-color: hsl(240, 9%, 23%);
+  flex-direction: column;
+  gap: 5rem;
+  /* background-color: rgba(53, 53, 64, 0.75); */
   border-radius: 15px;
   justify-content: space-between;
   padding: 3rem 2rem;
 }
 
 #about .about__details-flex .details-bio {
-  flex-basis: 50%;
+  flex-basis: 65%;
+}
+
+#about .details-bio button {
+  margin-top: 2rem;
 }
 
 #about .about__details-flex .details-skills {
-  flex-basis: 50%;
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #projects {
   min-height: 100vh;
   scroll-snap-align: start;
   /* background-color: var(--color-red); */
-  background-color: var(--color-primary-dark);
+  /* background-color: var(--color-primary-dark); */
+  /* background-color: rgba(53, 53, 64, 0.9); */
+}
+
+#projects header {
+  text-align: left;
+}
+
+#projects header h2 {
+  position: relative;
+  display: inline-block;
+}
+
+#projects header h2::before {
+  content: 'Projects';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  font-size: 15rem;
+  /* transform: translate(-50%, -50%); */
+  /* Fallback: Set a background color. */
+  /* background-color: white; */
+
+  /* Create the gradient. */
+  /* background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.1) 70%,
+    rgba(255, 255, 255, 0)
+  ); */
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 #projects .projects-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
 }
 
 #projects .project-card {
   padding: 1rem;
-  width: 600px;
+  /* width: 600px; */
   aspect-ratio: 16/9;
   cursor: pointer;
   border-radius: 10px;
   background-color: #27272e /* #1e1e24; */;
-  box-shadow: 0 5px 5px rgba(255, 0, 0, 0.2);
+  /* box-shadow: 0 5px 5px rgba(255, 0, 0, 0.2); */
 }
 
 #projects #project--flat-ui {
-  background-image: linear-gradient(
+  background-image: 
+  /* linear-gradient(
       to bottom right,
       rgba(0, 0, 0, 0.85),
       rgba(0, 0, 0, 0.6)
-    ),
-    url('images/preview-flat-ui-clone.png');
+    ), */ url('images/preview-flat-ui-clone.png');
   background-size: cover;
 }
 
+#projects .hidden {
+  background-image: none;
+}
+
 #projects #project--fylo {
-  background-image: linear-gradient(
+  background-image: 
+  /* linear-gradient(
       to bottom right,
       rgba(0, 0, 0, 0.85),
       rgba(0, 0, 0, 0.6)
-    ),
-    url('images/preview-fylo.png');
+    ), */ url('images/preview-fylo.png');
   background-size: contain;
-}
-
-#projects .project-card:nth-of-type(1):hover {
-  box-shadow: 0 8px 10px rgba(255, 0, 0, 0.5);
-}
-
-#projects .project-card:nth-of-type(2) {
-  box-shadow: 0 5px 5px rgba(0, 255, 0, 0.2);
-}
-
-#projects .project-card:nth-of-type(2):hover {
-  box-shadow: 0 8px 10px rgba(0, 255, 0, 0.5);
-}
-
-#projects .project-card:nth-of-type(3) {
-  box-shadow: 0 5px 5px rgba(0, 0, 255, 0.2);
-}
-
-#projects .project-card:nth-of-type(3):hover {
-  box-shadow: 0 8px 10px rgba(0, 0, 255, 0.5);
-}
-
-#projects .project-card:nth-of-type(4) {
-  box-shadow: 0 5px 5px rgba(252, 248, 5, 0.2);
-}
-
-#projects .project-card:nth-of-type(4):hover {
-  box-shadow: 0 8px 10px rgba(252, 248, 0, 0.5);
 }
 
 #projects .project-card .project-header {
@@ -455,7 +601,7 @@ main #subtitle_span-adjective {
 }
 
 #toolkit header {
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
 }
 
 #toolkit .tools-flex {
@@ -465,11 +611,12 @@ main #subtitle_span-adjective {
 }
 
 #toolkit .tools-frontend {
-  background-color: rgba(255, 65, 108, 0.7);
+  background-color: rgba(255, 65, 108, 0.17);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   flex-basis: 100%;
   min-height: 80vh;
+  /* backdrop-filter: blur(10px); */
 }
 
 #toolkit .tools-frontend p:first-of-type {
@@ -612,10 +759,6 @@ footer {
   opacity: 1;
 }
 
-#projects {
-  min-height: 88vh;
-}
-
 #toolkit {
   position: relative;
   min-height: 88vh;
@@ -729,22 +872,6 @@ footer {
   margin: 0 0.5rem;
 }
 
-@media screen and (max-width: 600px) {
-  main #name_span--first {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  main #name_span--last {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-  }
-}
-
 /* TEST FORM  */
 
 button {
@@ -758,6 +885,7 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  cursor: pointer;
 }
 
 button:active {
@@ -792,7 +920,7 @@ input {
   width: 100%;
 }
 
-.container {
+.contact-container {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);

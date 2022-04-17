@@ -23,7 +23,25 @@ Contact form will possibly contain:
     </section>
 */
 
+input::placeholder,
+textarea::placeholder {
+  color: $color-white * 0.7;
+}
+
+.contact__info,
+.contact__form {
+  > p {
+    color: $font-color-primary * 0.8;
+    margin-bottom: $margin-desktop;
+  }
+}
+
 .contact {
+  h4,
+  h5 {
+    font-size: 2rem;
+  }
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -70,7 +88,7 @@ Contact form will possibly contain:
   &__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     @include breakpoint(md) {
       flex: 0 0 48%;
@@ -110,8 +128,6 @@ Contact form will possibly contain:
   }
 
   &__form {
-    // border: dashed 1px red;
-
     @include breakpoint(md) {
       flex: 0 0 48%;
     }
@@ -120,10 +136,19 @@ Contact form will possibly contain:
     h5 {
     }
 
-    // TODO: Give class? might not always be a p
-    p {
-      color: $font-color-primary * 0.8;
-      margin-bottom: $margin-desktop;
+    .form__row {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      @include breakpoint(sm) {
+        flex-direction: row;
+        justify-content: space-around;
+
+        > * {
+          flex-basis: 100%;
+        }
+      }
     }
 
     form {
@@ -135,7 +160,7 @@ Contact form will possibly contain:
         height: 50px;
         border-radius: $subtle;
         color: $color-white;
-        background-color: $color-primary-dark;
+        background-color: var(--clr-background);
         border: none;
         border: 3px solid $color-red;
         padding-left: 1rem;
@@ -144,28 +169,11 @@ Contact form will possibly contain:
       textarea {
         border-radius: $subtle;
         color: $color-white;
-        background-color: $color-primary-dark;
+        background-color: var(--clr-background);
         border: none;
         border: 3px solid $color-red;
         padding-left: 1rem;
         padding-top: 1rem;
-      }
-
-      button {
-        align-self: flex-start;
-        font-family: inherit;
-        font-size: $font-size-body;
-        border-radius: $subtle;
-        cursor: pointer;
-        padding: 0.5rem 2rem;
-        text-transform: uppercase;
-        border: 3px solid $color-red;
-        color: $color-white;
-        background-color: transparent;
-      }
-
-      button:hover {
-        background-color: $color-red;
       }
     }
   }

@@ -1,31 +1,56 @@
-/*
-- I anticipate that this section will have a small, pixelated version of my picture. 
-- It will also have a bar (perhaps with icons) with a heading and short sentence. These will probably be characteristics that make me a good web developer. Or maybe characteristics of my work???
-- A short introduction of me as it relates to web development. Possibly a call-to-action to get in touch
-- Something else to fill the space?
+// TODO: TESTING
+@keyframes breathe {
+  0% {
+    transform: translateY(0) scale(1);
+  }
 
-<section id="about">
-      <h2 class="about__header">About</h2>
-      <div class="about__avatar">
-        <img src="images/matthew.png" />
-      </div>
-      <div class="about__body"></div>
-      <div class="about__traits">
-        <div class="trait">
-          <div class="trait__image"></div>
-          <div class="trait__header"></div>
-          <p class="trait__body"></p>
-        </div>
-      </div>
-    </section>
-*/
+  100% {
+    transform: translateY(25px) scale(1.05);
+  }
+}
+// TODO: Remove?
+@mixin fancy-breathing-header {
+  // TODO: TESTING
+  position: absolute;
+  font-size: 3.75rem;
+  line-height: 1;
+  top: -2rem;
+  left: 0;
 
-$img: url(https://res.cloudinary.com/dazdt97d3/image/upload/v1615813805/background.png);
+  @include breakpoint(md) {
+    font-size: 10rem;
+    top: -5rem;
+  }
+
+  /* Create the gradient. */
+  background-image: linear-gradient(
+    to bottom,
+    hsla(346, 100%, 63%, 0.5) 0%,
+    hsla(346, 100%, 63%, 0.1) 70%,
+    hsla(346, 100%, 63%, 0)
+  );
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  transform-origin: left;
+  animation: breathe 4s infinite ease-in-out alternate;
+}
+
 // $r: clamp(4em, 20vw, 15em);
 $r: clamp(4em, 10vw, 7.5em);
 
 .center {
-  // display: grid;
+  // We don't want user to highlight my avatar and see the goofy clip shape
+  user-select: none;
 }
 
 figure {
@@ -56,9 +81,8 @@ figure {
     content: '';
     padding: $r;
     border-radius: 50%;
+    // background-color: $color-primary-dark * 0.8;
     background-color: $color-red;
-    background-color: $color-primary-dark * 0.8;
-    // background: $img 50% / cover;
     // border: 3px solid $color-red;
   }
 
@@ -77,8 +101,19 @@ img {
 }
 
 .about {
+  // TODO: Remove
+  // Removing section paddings
+  padding: 0;
+  margin: 0 auto;
+  max-width: unset;
+  @include breakpoint(md) {
+    padding: 0;
+  }
+  position: relative;
+
   &__header {
     margin-bottom: $margin-desktop;
+    @include fancy-breathing-header;
   }
 
   &__introduction {
@@ -112,13 +147,16 @@ img {
     .about__body {
       display: flex;
       flex-direction: column;
+      gap: 1rem;
       justify-content: space-between;
+      // TODO: Figure out styling
       background-color: $color-red;
       background-color: $color-primary-dark * 0.8;
+      border: 5px solid $color-red;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      text-align: justify;
       padding: 1rem;
       border-radius: $rounded;
-      border: 5px solid $color-red;
 
       @include breakpoint(md) {
         align-self: stretch;
@@ -127,6 +165,7 @@ img {
   }
 
   &__traits {
+    color: $color-white * 0.75;
     margin-block: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -144,6 +183,9 @@ img {
     text-align: center;
     // border: 1px dashed blue;
     // background-color: $color-primary-dark * 0.9;
+
+    // TODO: If I want these to stick out more...
+    padding: 0.5rem 1rem;
   }
 
   .trait__image {
@@ -155,22 +197,5 @@ img {
   }
 
   .trait__body {
-  }
-
-  button {
-    align-self: flex-start;
-    font-family: inherit;
-    font-size: $font-size-body;
-    border-radius: $subtle;
-    cursor: pointer;
-    padding: 0.5rem 2rem;
-    text-transform: uppercase;
-    border: 3px solid $color-red;
-    color: $color-white;
-    background-color: transparent;
-  }
-
-  button:hover {
-    background-color: $color-red;
   }
 }
