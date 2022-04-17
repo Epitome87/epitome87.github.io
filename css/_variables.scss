@@ -3,19 +3,34 @@ $color-primary-dark: hsl(240, 9%, 13%);
 $color-red: hsl(346, 100%, 63%);
 $color-selection: hsl(340, 100%, 50%);
 $color-white: hsl(0, 0%, 100%);
+$color-gradient-hero: linear-gradient(
+  271deg,
+  #a0e9ff 30%,
+  #a162e8 50%,
+  #f093b0 70%,
+  #edca85 94%
+);
 
 /**************** Fonts *******************/
 $font-color-primary: hsl(256, 20%, 89%);
-$font-size-body: 1rem;
-$font-size-heading: 2rem;
+$font-size-heading: 3rem;
+$font-size-subheading: 1.5rem;
+$font-size-body: 1.1rem;
+$font-weight-body: 300;
+$font-weight-heading: 700;
 
 /*************** Spacing ******************/
 // Margin in "Container"
 $margin-mobile: 1rem;
 $margin-desktop: 2rem;
 
+// Border Radii
+$subtle: 5px;
+$rounded: 15px;
+$circle: 50%;
+
 // Breakpoints
-$max-width: 1200px;
+$max-width: 1400px; //1200px;
 
 $breakpoints: (
   sm: 499px,

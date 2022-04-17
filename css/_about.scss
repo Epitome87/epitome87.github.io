@@ -1,3 +1,176 @@
-#about {
-  background-color: orange * 0.1;
+/*
+- I anticipate that this section will have a small, pixelated version of my picture. 
+- It will also have a bar (perhaps with icons) with a heading and short sentence. These will probably be characteristics that make me a good web developer. Or maybe characteristics of my work???
+- A short introduction of me as it relates to web development. Possibly a call-to-action to get in touch
+- Something else to fill the space?
+
+<section id="about">
+      <h2 class="about__header">About</h2>
+      <div class="about__avatar">
+        <img src="images/matthew.png" />
+      </div>
+      <div class="about__body"></div>
+      <div class="about__traits">
+        <div class="trait">
+          <div class="trait__image"></div>
+          <div class="trait__header"></div>
+          <p class="trait__body"></p>
+        </div>
+      </div>
+    </section>
+*/
+
+$img: url(https://res.cloudinary.com/dazdt97d3/image/upload/v1615813805/background.png);
+// $r: clamp(4em, 20vw, 15em);
+$r: clamp(4em, 10vw, 7.5em);
+
+.center {
+  // display: grid;
+}
+
+figure {
+  --hov: 0;
+  --not-hov: calc(1 - var(--hov));
+  display: grid;
+  place-self: center;
+  margin: 0;
+  // Need room for image to expand up top
+  padding-top: 20%;
+  transform: scale(calc(1 - 0.1 * var(--not-hov)));
+  overflow: hidden;
+  border-radius: 0 0 $r $r;
+
+  &,
+  img {
+    transition: transform 0.2s ease-in-out;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+  }
+
+  &::before,
+  img {
+    grid-area: 1 / 1;
+    place-self: end center;
+  }
+
+  &::before {
+    content: '';
+    padding: $r;
+    border-radius: 50%;
+    background-color: $color-red;
+    background-color: $color-primary-dark * 0.8;
+    // background: $img 50% / cover;
+    // border: 3px solid $color-red;
+  }
+
+  &:hover {
+    --hov: 1;
+  }
+}
+
+img {
+  width: calc(2 *#{$r});
+  border-radius: $r;
+  // transform: translatey(calc((1 - var(--hov)) * 10%))
+  //   scale(calc(1.25 + 0.05 * var(--hov)));
+  transform: translateY(calc((0.5 - var(--hov)) * 10%))
+    scale(calc(1.25 + 0.05 * var(--hov)));
+}
+
+.about {
+  &__header {
+    margin-bottom: $margin-desktop;
+  }
+
+  &__introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $margin-mobile;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    &__avatar {
+      max-width: 250px;
+      max-height: 250px;
+      align-self: center;
+      background-color: $color-red;
+      border-radius: $circle;
+      // overflow: hidden;
+
+      img {
+        position: relative;
+        top: -100px;
+        left: 5px;
+        // background-color: $color-red * 0.9;
+        border-radius: 50%;
+      }
+    }
+
+    .about__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $color-red;
+      background-color: $color-primary-dark * 0.8;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      border-radius: $rounded;
+      border: 5px solid $color-red;
+
+      @include breakpoint(md) {
+        align-self: stretch;
+      }
+    }
+  }
+
+  &__traits {
+    margin-block: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    row-gap: 1rem;
+    column-gap: 1rem;
+    justify-content: space-between;
+
+    @include breakpoint(md) {
+      column-gap: 4rem;
+      row-gap: 2rem;
+    }
+  }
+
+  .trait {
+    text-align: center;
+    // border: 1px dashed blue;
+    // background-color: $color-primary-dark * 0.9;
+  }
+
+  .trait__image {
+  }
+
+  .trait__header {
+    font-size: $font-size-subheading;
+    font-weight: $font-weight-heading;
+  }
+
+  .trait__body {
+  }
+
+  button {
+    align-self: flex-start;
+    font-family: inherit;
+    font-size: $font-size-body;
+    border-radius: $subtle;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    text-transform: uppercase;
+    border: 3px solid $color-red;
+    color: $color-white;
+    background-color: transparent;
+  }
+
+  button:hover {
+    background-color: $color-red;
+  }
 }

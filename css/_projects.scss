@@ -5,31 +5,27 @@
 - Mobile: 1 column of grids
 - 500px or so, 2 columns
 - Desktop: 2 rows, top row has 3 columns, bottom row has 2
-
- <!-- My Projects Section -->
-    <section id="projects">
-      <h3 class="projects__header">Projects</h3>
-      <div class="projects__grid">
-        <div class="project">
-          <div class="project__overlay">
-            <h4 class="project__header"></h4>
-          </div>
-        </div>
-      </div>
-    </section>
+- Maybe some icons or cards that present the characteristics of my work. For example, "Responsive", "Dynamic", 
 */
 
-#projects {
-  background-color: green * 0.1;
-
-  .projects__header {
+.projects {
+  &__header {
   }
 
-  .projects__grid {
+  &__subheader {
+    font-size: $font-size-subheading;
+    margin-block: 1rem;
+  }
+
+  &__grid {
     display: grid;
     // On mobile, singular column of projects
     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     gap: 2rem;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    }
 
     .project:nth-of-type(1) {
       background-image: url(../images/preview-flat-ui-clone.png);
@@ -38,19 +34,19 @@
       background-image: url(../images/preview-fylo.png);
     }
     .project:nth-of-type(3) {
-      background-image: url(../images/preview-flat-ui-clone.png);
+      background-image: url(../images/preview-react-recipes.png);
     }
     .project:nth-of-type(4) {
-      background-image: url(../images/preview-fylo.png);
+      background-image: url(../images/preview-dad-jokes.png);
     }
     .project:nth-of-type(5) {
-      background-image: url(../images/preview-flat-ui-clone.png);
+      background-image: url(../images/preview-personal-portfolio.png);
     }
   }
 
   .project {
     height: 350px;
-    border-radius: 1rem;
+    border-radius: $subtle;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

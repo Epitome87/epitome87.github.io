@@ -1,3 +1,56 @@
-#hero {
-  background-color: yellow * 0.1;
+.hero {
+  // Display flex for simpler horizontal & vertical centering
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  text-transform: uppercase;
+
+  &__header {
+    @include breakpoint(md) {
+      letter-spacing: 15px;
+    }
+
+    .first-name {
+      font-size: 3.3rem;
+      color: #a2d2ff;
+      display: block;
+      padding: 0;
+      margin: 0;
+      line-height: 0.8;
+      background: $color-gradient-hero;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include breakpoint(md) {
+        font-size: 7.5rem;
+      }
+    }
+
+    .last-name {
+      font-size: 3rem;
+      background: #a2d2ff;
+      color: $color-primary-dark;
+      display: inline-block;
+      padding: 0 1rem;
+      border-radius: 5px;
+      line-height: 1;
+      background: $color-gradient-hero;
+
+      @include breakpoint(md) {
+        font-size: 7rem;
+      }
+    }
+  }
+
+  &__subheader {
+    font-size: calc(#{$font-size-subheading} * 0.75);
+    margin-block: $margin-mobile;
+
+    @include breakpoint(md) {
+      letter-spacing: 3px;
+      font-size: $font-size-subheading;
+    }
+  }
 }

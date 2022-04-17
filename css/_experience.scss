@@ -1,0 +1,104 @@
+/*
+I anticipate that this section will have two parts -- a list of the courses I taught, and then a list of frontend/backend skills
+*/
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+}
+
+.skills__header {
+  font-size: $font-size-subheading;
+  font-weight: $font-weight-heading;
+}
+
+.skills__subheader {
+}
+
+.skills__list {
+  margin-block: 1rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: $color-red;
+}
+
+.skill {
+  background-color: $color-primary-dark * 1.2;
+  padding: 0.2rem 0.5rem;
+  border-radius: $rounded;
+}
+
+.education,
+.skills {
+  flex-basis: 100%;
+}
+
+.experience {
+  &__header {
+    margin-bottom: $margin-desktop;
+  }
+
+  .date {
+    color: $font-color-primary * 0.75;
+  }
+  .header {
+    font-size: $font-size-subheading;
+  }
+
+  .description {
+  }
+
+  img {
+    width: 1.75rem;
+    aspect-ratio: 1.25;
+    position: absolute;
+    top: 1px;
+    left: -1.75rem;
+    padding: 0.1rem;
+    background-color: $color-primary-dark;
+
+    @include breakpoint(md) {
+      width: 2rem;
+      left: -2.5rem;
+    }
+  }
+  ul {
+    // TODO: Do this in a ::before or ::after instead?
+    // border-left: 5px solid $color-red;
+    // padding-left: 1ch;
+    margin-left: 2ch;
+  }
+
+  li {
+    position: relative;
+    list-style-type: none;
+  }
+
+  // Bottom padding on every timeline item besides the last
+  li:not(:last-child) {
+    padding-bottom: 3rem;
+  }
+
+  // Vertical timeline line
+  li::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 2px;
+    width: 2px;
+    height: calc(100% - 4px);
+    background: $color-red;
+
+    @include breakpoint(md) {
+      left: -1.5rem;
+    }
+  }
+}

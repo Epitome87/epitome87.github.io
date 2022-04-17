@@ -1,6 +1,7 @@
 /**************** Colors ******************/
 /**************** Fonts *******************/
 /*************** Spacing ******************/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
 *,
 *::before,
 *::after {
@@ -37,9 +38,11 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6;
   background-color: #1e1e24;
   color: #e0dde9;
-  line-height: 1.6;
 }
 
 /* Custom Scrollbar */
@@ -57,7 +60,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-  max-width: 1260px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -72,15 +75,22 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   /* Headers need more white-space! */
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
 }
 
 section {
   padding: 2rem 1rem;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 @media screen and (min-width: 899px) {
@@ -106,7 +116,6 @@ section {
 */
 header {
   padding: 1rem 2rem;
-  background-color: #1a0000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,12 +160,267 @@ nav a:visited {
   text-decoration: none;
 }
 
-#hero {
-  background-color: #1a1a00;
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-#about {
-  background-color: #1a1100;
+@media screen and (min-width: 899px) {
+  .hero__header {
+    letter-spacing: 15px;
+  }
+}
+
+.hero__header .first-name {
+  font-size: 3.3rem;
+  color: #a2d2ff;
+  display: block;
+  padding: 0;
+  margin: 0;
+  line-height: 0.8;
+  background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 899px) {
+  .hero__header .first-name {
+    font-size: 7.5rem;
+  }
+}
+
+.hero__header .last-name {
+  font-size: 3rem;
+  background: #a2d2ff;
+  color: #1e1e24;
+  display: inline-block;
+  padding: 0 1rem;
+  border-radius: 5px;
+  line-height: 1;
+  background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+}
+
+@media screen and (min-width: 899px) {
+  .hero__header .last-name {
+    font-size: 7rem;
+  }
+}
+
+.hero__subheader {
+  font-size: calc(1.5rem * 0.75);
+  margin-block: 1rem;
+}
+
+@media screen and (min-width: 899px) {
+  .hero__subheader {
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+  }
+}
+
+/*
+- I anticipate that this section will have a small, pixelated version of my picture. 
+- It will also have a bar (perhaps with icons) with a heading and short sentence. These will probably be characteristics that make me a good web developer. Or maybe characteristics of my work???
+- A short introduction of me as it relates to web development. Possibly a call-to-action to get in touch
+- Something else to fill the space?
+
+<section id="about">
+      <h2 class="about__header">About</h2>
+      <div class="about__avatar">
+        <img src="images/matthew.png" />
+      </div>
+      <div class="about__body"></div>
+      <div class="about__traits">
+        <div class="trait">
+          <div class="trait__image"></div>
+          <div class="trait__header"></div>
+          <p class="trait__body"></p>
+        </div>
+      </div>
+    </section>
+*/
+figure {
+  --hov: 0;
+  --not-hov: calc(1 - var(--hov));
+  display: -ms-grid;
+  display: grid;
+  place-self: center;
+  margin: 0;
+  padding-top: 20%;
+  -webkit-transform: scale(calc(1 - 0.1 * var(--not-hov)));
+          transform: scale(calc(1 - 0.1 * var(--not-hov)));
+  overflow: hidden;
+  border-radius: 0 0 clamp(4em, 10vw, 7.5em) clamp(4em, 10vw, 7.5em);
+}
+
+figure,
+figure img {
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+figure::before,
+figure img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
+  place-self: end center;
+}
+
+figure::before {
+  content: '';
+  padding: clamp(4em, 10vw, 7.5em);
+  border-radius: 50%;
+  background-color: #ff426e;
+  background-color: #18181d;
+}
+
+figure:hover {
+  --hov: 1;
+}
+
+img {
+  width: calc(2 *clamp(4em, 10vw, 7.5em));
+  border-radius: clamp(4em, 10vw, 7.5em);
+  -webkit-transform: translateY(calc((0.5 - var(--hov)) * 10%)) scale(calc(1.25 + 0.05 * var(--hov)));
+          transform: translateY(calc((0.5 - var(--hov)) * 10%)) scale(calc(1.25 + 0.05 * var(--hov)));
+}
+
+.about__header {
+  margin-bottom: 2rem;
+}
+
+.about__introduction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 899px) {
+  .about__introduction {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.about__introduction__avatar {
+  max-width: 250px;
+  max-height: 250px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #ff426e;
+  border-radius: 50%;
+}
+
+.about__introduction__avatar img {
+  position: relative;
+  top: -100px;
+  left: 5px;
+  border-radius: 50%;
+}
+
+.about__introduction .about__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #ff426e;
+  background-color: #18181d;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 5px solid #ff426e;
+}
+
+@media screen and (min-width: 899px) {
+  .about__introduction .about__body {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
+}
+
+.about__traits {
+  margin-block: 5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  row-gap: 1rem;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 899px) {
+  .about__traits {
+    -webkit-column-gap: 4rem;
+            column-gap: 4rem;
+    row-gap: 2rem;
+  }
+}
+
+.about .trait {
+  text-align: center;
+}
+
+.about .trait__header {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.about button {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-family: inherit;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  border: 3px solid #ff426e;
+  color: white;
+  background-color: transparent;
+}
+
+.about button:hover {
+  background-color: #ff426e;
 }
 
 /* Initial Design Ideas:  
@@ -166,24 +430,14 @@ nav a:visited {
 - Mobile: 1 column of grids
 - 500px or so, 2 columns
 - Desktop: 2 rows, top row has 3 columns, bottom row has 2
-
- <!-- My Projects Section -->
-    <section id="projects">
-      <h3 class="projects__header">Projects</h3>
-      <div class="projects__grid">
-        <div class="project">
-          <div class="project__overlay">
-            <h4 class="project__header"></h4>
-          </div>
-        </div>
-      </div>
-    </section>
+- Maybe some icons or cards that present the characteristics of my work. For example, "Responsive", "Dynamic", 
 */
-#projects {
-  background-color: #000d00;
+.projects__subheader {
+  font-size: 1.5rem;
+  margin-block: 1rem;
 }
 
-#projects .projects__grid {
+.projects__grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(275px, 1fr))[auto-fit];
@@ -191,45 +445,203 @@ nav a:visited {
   gap: 2rem;
 }
 
-#projects .projects__grid .project:nth-of-type(1) {
+@media screen and (min-width: 899px) {
+  .projects__grid {
+    -ms-grid-columns: (minmax(375px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  }
+}
+
+.projects__grid .project:nth-of-type(1) {
   background-image: url(../images/preview-flat-ui-clone.png);
 }
 
-#projects .projects__grid .project:nth-of-type(2) {
+.projects__grid .project:nth-of-type(2) {
   background-image: url(../images/preview-fylo.png);
 }
 
-#projects .projects__grid .project:nth-of-type(3) {
-  background-image: url(../images/preview-flat-ui-clone.png);
+.projects__grid .project:nth-of-type(3) {
+  background-image: url(../images/preview-react-recipes.png);
 }
 
-#projects .projects__grid .project:nth-of-type(4) {
-  background-image: url(../images/preview-fylo.png);
+.projects__grid .project:nth-of-type(4) {
+  background-image: url(../images/preview-dad-jokes.png);
 }
 
-#projects .projects__grid .project:nth-of-type(5) {
-  background-image: url(../images/preview-flat-ui-clone.png);
+.projects__grid .project:nth-of-type(5) {
+  background-image: url(../images/preview-personal-portfolio.png);
 }
 
-#projects .project {
+.projects .project {
   height: 350px;
-  border-radius: 1rem;
+  border-radius: 5px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
-#contact {
-  background-color: #00001a;
+/*
+I anticipate that this section will have two parts -- a list of the courses I taught, and then a list of frontend/backend skills
+*/
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
 }
 
-#footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  background-color: #1a0000;
+@media screen and (min-width: 899px) {
+  .flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 5rem;
+  }
 }
 
-#footer .socials {
+.skills__header {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.skills__list {
+  margin-block: 1rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  color: #ff426e;
+}
+
+.skill {
+  background-color: #24242b;
+  padding: 0.2rem 0.5rem;
+  border-radius: 15px;
+}
+
+.education,
+.skills {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.experience__header {
+  margin-bottom: 2rem;
+}
+
+.experience .date {
+  color: #a8a6ae;
+}
+
+.experience .header {
+  font-size: 1.5rem;
+}
+
+.experience img {
+  width: 1.75rem;
+  aspect-ratio: 1.25;
+  position: absolute;
+  top: 1px;
+  left: -1.75rem;
+  padding: 0.1rem;
+  background-color: #1e1e24;
+}
+
+@media screen and (min-width: 899px) {
+  .experience img {
+    width: 2rem;
+    left: -2.5rem;
+  }
+}
+
+.experience ul {
+  margin-left: 2ch;
+}
+
+.experience li {
+  position: relative;
+  list-style-type: none;
+}
+
+.experience li:not(:last-child) {
+  padding-bottom: 3rem;
+}
+
+.experience li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 2px;
+  width: 2px;
+  height: calc(100% - 4px);
+  background: #ff426e;
+}
+
+@media screen and (min-width: 899px) {
+  .experience li::before {
+    left: -1.5rem;
+  }
+}
+
+/* 
+Contact form will possibly contain:
+- Very simple form with client's name, email, and message. Button to send message.
+- Probably to the side of that is some short text, along with my email address and work hours, possibly the state I reside in
+    <section id="contact">
+      <div class="contact__info">
+      <h4>Contact</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+          vitae ratione nihil molestias provident, autem impedit quis. Maxime
+          tenetur quidem dolorem dicta cupiditate, accusantium voluptatum
+          itaque!
+        </p>
+        <p>Redlands, California, USA</p>
+        <p>matthew.mcgrath.b@gmail.com</p>
+        <p>Mon - Fri 8:00 AM to 8 PM</p>
+      </div>
+      <div class="contact__form">
+        <input type="text" />
+        <input type="text" />
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+    </section>
+*/
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 899px) {
+  .contact {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+.contact .socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,13 +652,13 @@ nav a:visited {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 1rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-bottom: 1rem;
 }
 
-#footer .social-link {
+.contact .social-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,40 +677,213 @@ nav a:visited {
   border-radius: 50%;
 }
 
-#hero a:hover,
-#footer a:hover {
+.contact a:hover {
   background-color: white;
 }
 
-#hero a svg,
-#footer a svg {
+.contact a svg {
   fill: white;
   width: 65%;
   height: 65%;
 }
 
-#hero a:hover svg,
-#footer a:hover svg {
+.contact a:hover svg {
   fill: #ff426e;
 }
 
-#footer .footer__copyright span:nth-child(2) {
+.contact__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 899px) {
+  .contact__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 48%;
+            flex: 0 0 48%;
+  }
+}
+
+.contact__info address {
+  font-style: normal;
+}
+
+.contact__info a {
+  color: inherit;
+}
+
+.contact__info a:hover {
   color: #ff426e;
 }
 
-#hero a svg,
-#footer a svg {
+.contact__info .contact__details {
+  margin-top: 1rem;
+}
+
+.contact__info .contact__details > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.contact .contact__detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .contact__detail img {
+  width: 20px;
+  aspect-ratio: 1.25;
+}
+
+@media screen and (min-width: 899px) {
+  .contact__form {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 48%;
+            flex: 0 0 48%;
+  }
+}
+
+.contact__form p {
+  color: #b3b1ba;
+  margin-bottom: 2rem;
+}
+
+.contact__form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.contact__form form input {
+  height: 50px;
+  border-radius: 5px;
+  color: white;
+  background-color: #1e1e24;
+  border: none;
+  border: 3px solid #ff426e;
+  padding-left: 1rem;
+}
+
+.contact__form form textarea {
+  border-radius: 5px;
+  color: white;
+  background-color: #1e1e24;
+  border: none;
+  border: 3px solid #ff426e;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.contact__form form button {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-family: inherit;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  border: 3px solid #ff426e;
+  color: white;
+  background-color: transparent;
+}
+
+.contact__form form button:hover {
+  background-color: #ff426e;
+}
+
+.footer {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.footer .social-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.hero a:hover,
+.footer a:hover {
+  background-color: white;
+}
+
+.hero a svg,
+.footer a svg {
   fill: white;
   width: 65%;
   height: 65%;
 }
 
-#hero a:hover svg,
-#footer a:hover svg {
+.hero a:hover svg,
+.footer a:hover svg {
   fill: #ff426e;
 }
 
-#footer .footer__copyright span:nth-child(2) {
+.footer .footer__copyright span:nth-child(2) {
+  color: #ff426e;
+}
+
+.hero a svg,
+.footer a svg {
+  fill: white;
+  width: 65%;
+  height: 65%;
+}
+
+.hero a:hover svg,
+.footer a:hover svg {
+  fill: #ff426e;
+}
+
+.footer .footer__copyright span:nth-child(2) {
   color: #ff426e;
 }
 /*# sourceMappingURL=style.css.map */

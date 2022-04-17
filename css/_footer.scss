@@ -1,7 +1,7 @@
-#footer {
+.footer {
   padding: 2rem $margin-mobile;
   text-align: center;
-  background-color: red * 0.1;
+  //   background-color: red * 0.1;
 
   // Row of icons with gap between them
   .socials {
@@ -25,39 +25,39 @@
   }
 }
 
-#hero a:hover,
-#footer a:hover {
+.hero a:hover,
+.footer a:hover {
   background-color: $color-white;
 }
 
-#hero a svg,
-#footer a svg {
+.hero a svg,
+.footer a svg {
   fill: $color-white;
   width: 65%;
   height: 65%;
 }
 
-#hero a:hover svg,
-#footer a:hover svg {
+.hero a:hover svg,
+.footer a:hover svg {
   fill: $color-red;
 }
 
-#footer .footer__copyright span:nth-child(2) {
+.footer .footer__copyright span:nth-child(2) {
   color: $color-red;
 }
 
-#hero a svg,
-#footer a svg {
+.hero a svg,
+.footer a svg {
   fill: $color-white;
   width: 65%;
   height: 65%;
 }
 
-#hero a:hover svg,
-#footer a:hover svg {
+.hero a:hover svg,
+.footer a:hover svg {
   fill: $color-red;
 }
 
-#footer .footer__copyright span:nth-child(2) {
+.footer .footer__copyright span:nth-child(2) {
   color: $color-red;
 }
