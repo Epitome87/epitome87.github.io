@@ -661,9 +661,37 @@ img {
 - Desktop: 2 rows, top row has 3 columns, bottom row has 2
 - Maybe some icons or cards that present the characteristics of my work. For example, "Responsive", "Dynamic", 
 */
+.projects {
+  padding-inline: 1rem;
+  margin: 0 auto;
+  max-width: unset;
+}
+
+@media screen and (min-width: 899px) {
+  .projects {
+    padding-inline: 2rem;
+  }
+}
+
 .projects__subheader {
   font-size: 1.5rem;
   margin-block: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.projects__subheader a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.projects__subheader span {
+  color: #ff426e;
 }
 
 .projects__grid {
@@ -681,12 +709,57 @@ img {
   }
 }
 
+@media screen and (min-width: 999px) {
+  .projects__grid {
+    -ms-grid-columns: (minmax(450px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+}
+
+.projects__grid .project {
+  height: 350px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #ff426e;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: relative;
+}
+
+.projects__grid .project__overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right bottom, from(#ff426e), to(#802137));
+  background: linear-gradient(to bottom right, #ff426e, #802137);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.projects__grid .project:focus, .projects__grid .project:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.projects__grid .project:focus .project__overlay,
+.projects__grid .project:hover .project__overlay {
+  opacity: 1;
+}
+
 .projects__grid .project:nth-of-type(1) {
   background-image: url(../images/preview-flat-ui-clone.png);
 }
 
 .projects__grid .project:nth-of-type(2) {
-  background-image: url(../images/preview-fylo.png);
+  background-image: url(../images/preview-social-proof-section.png);
 }
 
 .projects__grid .project:nth-of-type(3) {
@@ -698,15 +771,35 @@ img {
 }
 
 .projects__grid .project:nth-of-type(5) {
+  background-image: url(../images/preview-stock-forum.png);
+}
+
+.projects__grid .project:nth-of-type(6) {
   background-image: url(../images/preview-personal-portfolio.png);
 }
 
-.projects .project {
-  height: 350px;
-  border-radius: 5px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+.projects__grid .project__description {
+  padding: 2rem;
+}
+
+.projects__grid .project__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects__grid .project__buttons button {
+  font-family: inherit;
+  color: #ff426e;
+  background-color: white;
+}
+
+.projects__grid .project__buttons a {
+  text-decoration: none;
 }
 
 .flex-container {
