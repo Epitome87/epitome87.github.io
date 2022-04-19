@@ -690,6 +690,7 @@ img {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   border: 2px solid #ff426e;
+  padding-block: 0.5rem;
 }
 
 .projects__grid .project:focus, .projects__grid .project:hover {
@@ -724,6 +725,10 @@ img {
 
 .projects__grid .project:nth-of-type(6) {
   background-image: url(../images/preview-personal-portfolio.png);
+}
+
+.projects__grid .project__header {
+  font-size: 1.5rem;
 }
 
 .projects__grid .project__description {

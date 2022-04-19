@@ -71,6 +71,7 @@
         border-radius: $subtle;
         transition: 0.5s ease-in-out;
         border: 2px solid $color-red;
+        padding-block: 0.5rem;
       }
 
       &:focus,
@@ -101,6 +102,10 @@
       }
       &:nth-of-type(6) {
         background-image: url(../images/preview-personal-portfolio.png);
+      }
+
+      &__header {
+        font-size: $font-size-subheading;
       }
 
       &__description {
