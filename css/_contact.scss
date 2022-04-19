@@ -1,28 +1,3 @@
-/* 
-Contact form will possibly contain:
-- Very simple form with client's name, email, and message. Button to send message.
-- Probably to the side of that is some short text, along with my email address and work hours, possibly the state I reside in
-    <section id="contact">
-      <div class="contact__info">
-      <h4>Contact</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          vitae ratione nihil molestias provident, autem impedit quis. Maxime
-          tenetur quidem dolorem dicta cupiditate, accusantium voluptatum
-          itaque!
-        </p>
-        <p>Redlands, California, USA</p>
-        <p>matthew.mcgrath.b@gmail.com</p>
-        <p>Mon - Fri 8:00 AM to 8 PM</p>
-      </div>
-      <div class="contact__form">
-        <input type="text" />
-        <input type="text" />
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </div>
-    </section>
-*/
-
 input::placeholder,
 textarea::placeholder {
   color: $color-white * 0.7;
@@ -31,17 +6,20 @@ textarea::placeholder {
 .contact__info,
 .contact__form {
   > p {
-    color: $font-color-primary * 0.8;
-    margin-bottom: $margin-desktop;
+    font-size: $font-size-body * 0.8;
+    margin-bottom: $margin-mobile;
+  }
+
+  @include breakpoint(md) {
+    > p {
+      font-size: $font-size-body;
+      color: $font-color-primary * 0.8;
+      margin-bottom: $margin-desktop;
+    }
   }
 }
 
 .contact {
-  h4,
-  h5 {
-    font-size: 2rem;
-  }
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -50,6 +28,15 @@ textarea::placeholder {
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
+  }
+
+  h4,
+  h5 {
+    font-size: $font-size-subheading;
+
+    @include breakpoint(md) {
+      font-size: 2rem;
+    }
   }
 
   // Row of icons with gap between them
@@ -108,6 +95,7 @@ textarea::placeholder {
     }
 
     .contact__details {
+      font-size: $font-size-body * 0.9;
       margin-top: $margin-mobile;
 
       > *:not(:last-child) {
@@ -120,10 +108,20 @@ textarea::placeholder {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    justify-content: flex-start;
 
     img {
       width: 20px;
       aspect-ratio: 1.25;
+    }
+
+    p,
+    a {
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateX(0.25rem);
+      }
     }
   }
 

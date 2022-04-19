@@ -1,4 +1,4 @@
-// TODO: TESTING
+// Breathe-like animation for floating text
 @keyframes breathe {
   0% {
     transform: translateY(0) scale(1);
@@ -8,29 +8,20 @@
     transform: translateY(25px) scale(1.05);
   }
 }
-// TODO: Remove?
+
 @mixin fancy-breathing-header {
-  // TODO: TESTING
   position: absolute;
   font-size: 3.75rem;
   line-height: 1;
   top: -2rem;
   left: 0;
 
-  @include breakpoint(md) {
-    font-size: 10rem;
-    top: -5rem;
-  }
-
-  /* Create the gradient. */
   background-image: linear-gradient(
     to bottom,
     hsla(346, 100%, 63%, 0.5) 0%,
     hsla(346, 100%, 63%, 0.1) 70%,
     hsla(346, 100%, 63%, 0)
   );
-
-  /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;
 
@@ -43,6 +34,11 @@
   -moz-text-fill-color: transparent;
   transform-origin: left;
   animation: breathe 4s infinite ease-in-out alternate;
+
+  @include breakpoint(md) {
+    font-size: 10rem;
+    top: -5rem;
+  }
 }
 
 // $r: clamp(4em, 20vw, 15em);
@@ -81,9 +77,7 @@ figure {
     content: '';
     padding: $r;
     border-radius: 50%;
-    // background-color: $color-primary-dark * 0.8;
     background-color: $color-red;
-    // border: 3px solid $color-red;
   }
 
   &:hover {
@@ -96,12 +90,10 @@ img {
   border-radius: $r;
   // transform: translatey(calc((1 - var(--hov)) * 10%))
   //   scale(calc(1.25 + 0.05 * var(--hov)));
-  transform: translateY(calc((0.5 - var(--hov)) * 10%))
-    scale(calc(1.25 + 0.05 * var(--hov)));
+  transform: translateY(calc((0.5 - var(--hov)) * 10%)) scale(calc(1.25 + 0.05 * var(--hov)));
 }
 
 .about {
-  // TODO: Remove
   // Removing section paddings
   padding: 0;
   margin: 0 auto;
@@ -112,6 +104,9 @@ img {
   position: relative;
 
   &__header {
+    // We don't want this huge floating heading to block input or receive highlighting
+    user-select: none;
+    pointer-events: none;
     margin-bottom: $margin-desktop;
     @include fancy-breathing-header;
   }
@@ -139,7 +134,6 @@ img {
         position: relative;
         top: -100px;
         left: 5px;
-        // background-color: $color-red * 0.9;
         border-radius: 50%;
       }
     }
@@ -149,24 +143,35 @@ img {
       flex-direction: column;
       gap: 1rem;
       justify-content: space-between;
-      // TODO: Figure out styling
-      background-color: $color-red;
       background-color: $color-primary-dark * 0.8;
-      border: 5px solid $color-red;
+      border: 3px solid $color-red;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      font-size: $font-size-body * 0.8;
       text-align: justify;
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: $rounded;
 
       @include breakpoint(md) {
+        font-size: $font-size-body;
         align-self: stretch;
+        padding: 2rem;
+        border: 5px solid $color-red;
       }
+    }
+  }
+
+  button {
+    font-size: $font-size-body * 0.8;
+    padding: 0.2rem 0.5rem;
+
+    @include breakpoint(md) {
+      font-size: $font-size-body;
     }
   }
 
   &__traits {
     background-color: $color-primary-dark * 0.8;
-    // background-color: $color-red * 0.75;
+
     border-block: 1px solid $color-red;
 
     margin-block: 5rem;
@@ -184,9 +189,6 @@ img {
 
   .trait {
     text-align: center;
-    // border: 1px dashed blue;
-    // background-color: $color-primary-dark * 0.9;
-
     // TODO: If I want these to stick out more...
     padding: 0.5rem 1rem;
   }

@@ -21,6 +21,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *::-moz-selection {
@@ -39,10 +40,6 @@
   stroke-width: 5px;
 }
 
-img {
-  width: 100%;
-}
-
 html {
   overflow-y: scroll;
   height: 100vh;
@@ -55,8 +52,6 @@ body {
   line-height: 1.6;
   background-color: #1e1e24;
   color: #e0dde9;
-  background-color: var(--clr-background);
-  color: var(--clr-text);
 }
 
 /* Custom Scrollbar */
@@ -71,6 +66,17 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #ff426e;
   border-radius: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: white;
 }
 
 .container {
@@ -148,75 +154,6 @@ button:hover {
   background-color: #ff426e;
 }
 
-#scroller-container {
-  position: relative;
-  overflow: hidden;
-  border: 2px solid red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 200px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.scroller-one,
-.scroller-two {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-  -webkit-animation: move 20s infinite linear;
-          animation: move 20s infinite linear;
-}
-
-.scroller-two {
-  width: 100%;
-  top: 100px;
-  -webkit-transform: translate(100%, 0);
-          transform: translate(100%, 0);
-  -webkit-animation: move 20s infinite linear;
-          animation: move 20s infinite linear;
-  animation-direction: reverse;
-}
-
-.scroller-one .trait,
-.scroller-two .trait {
-  margin: 0 0.5em;
-  display: inline-block;
-}
-
-@-webkit-keyframes move {
-  0% {
-    -webkit-transform: translate(105%, 0);
-            transform: translate(105%, 0);
-  }
-  /* Finish changes by here */
-  /* Between 20% and 100%, nothing changes */
-  100% {
-    -webkit-transform: translate(-100%, 0);
-            transform: translate(-100%, 0);
-  }
-}
-
-@keyframes move {
-  0% {
-    -webkit-transform: translate(105%, 0);
-            transform: translate(105%, 0);
-  }
-  /* Finish changes by here */
-  /* Between 20% and 100%, nothing changes */
-  100% {
-    -webkit-transform: translate(-100%, 0);
-            transform: translate(-100%, 0);
-  }
-}
-
 /*
     <header class="header">
       <div class="header__logo">
@@ -272,12 +209,6 @@ nav li:hover::after {
   left: 0;
 }
 
-nav a:link,
-nav a:visited {
-  color: white;
-  text-decoration: none;
-}
-
 #particles-js {
   position: absolute;
   z-index: -1;
@@ -331,7 +262,6 @@ nav a:visited {
   border: 3px solid #ff426e;
   color: white;
   background-color: transparent;
-  text-decoration: none;
 }
 
 .hero__cta:hover {
@@ -497,16 +427,19 @@ img {
 }
 
 .about__header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
   margin-bottom: 2rem;
   position: absolute;
   font-size: 3.75rem;
   line-height: 1;
   top: -2rem;
   left: 0;
-  /* Create the gradient. */
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 66, 110, 0.5)), color-stop(70%, rgba(255, 66, 110, 0.1)), to(rgba(255, 66, 110, 0)));
   background-image: linear-gradient(to bottom, rgba(255, 66, 110, 0.5) 0%, rgba(255, 66, 110, 0.1) 70%, rgba(255, 66, 110, 0));
-  /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;
   /* Use the text as a mask for the background. */
@@ -582,21 +515,35 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #ff426e;
   background-color: #18181d;
-  border: 5px solid #ff426e;
+  border: 3px solid #ff426e;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  font-size: 0.88rem;
   text-align: justify;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 15px;
 }
 
 @media screen and (min-width: 899px) {
   .about__introduction .about__body {
+    font-size: 1.1rem;
     -ms-flex-item-align: stretch;
         -ms-grid-row-align: stretch;
         align-self: stretch;
+    padding: 2rem;
+    border: 5px solid #ff426e;
+  }
+}
+
+.about button {
+  font-size: 0.88rem;
+  padding: 0.2rem 0.5rem;
+}
+
+@media screen and (min-width: 899px) {
+  .about button {
+    font-size: 1.1rem;
   }
 }
 
@@ -652,15 +599,6 @@ img {
   }
 }
 
-/* Initial Design Ideas:  
-- Grid for layout, maybe 3 small grids and 2 larger grids (for my best two projects)
-- Grids contain only a preview picture of the project when not hovered
-- When hovered, a transparent primary (red) overlay pops up with some info about the project, CTA button to learn more
-- Mobile: 1 column of grids
-- 500px or so, 2 columns
-- Desktop: 2 rows, top row has 3 columns, bottom row has 2
-- Maybe some icons or cards that present the characteristics of my work. For example, "Responsive", "Dynamic", 
-*/
 .projects {
   padding-inline: 1rem;
   margin: 0 auto;
@@ -673,8 +611,17 @@ img {
   }
 }
 
+.projects__header::before, .projects__header::after {
+  content: '';
+  display: inline-block;
+  border-top: 0.25rem solid #ff426e;
+  width: 5rem;
+  margin: 0 1rem;
+  -webkit-transform: translateY(-0.8rem);
+          transform: translateY(-0.8rem);
+}
+
 .projects__subheader {
-  font-size: 1.5rem;
   margin-block: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -684,10 +631,10 @@ img {
           justify-content: space-between;
 }
 
-.projects__subheader a {
-  font-size: 1.1rem;
-  text-decoration: none;
-  color: white;
+@media screen and (min-width: 899px) {
+  .projects__subheader {
+    font-size: 1.5rem;
+  }
 }
 
 .projects__subheader span {
@@ -738,10 +685,11 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right bottom, from(#ff426e), to(#802137));
-  background: linear-gradient(to bottom right, #ff426e, #802137);
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  background-color: #18181d;
+  border-radius: 5px;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  border: 2px solid #ff426e;
 }
 
 .projects__grid .project:focus, .projects__grid .project:hover {
@@ -779,27 +727,27 @@ img {
 }
 
 .projects__grid .project__description {
-  padding: 2rem;
+  font-size: 0.935rem;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 899px) {
+  .projects__grid .project__description {
+    font-size: 1.1rem;
+    padding: 2rem;
+  }
 }
 
 .projects__grid .project__buttons {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.projects__grid .project__buttons button {
-  font-family: inherit;
-  color: #ff426e;
-  background-color: white;
-}
-
-.projects__grid .project__buttons a {
-  text-decoration: none;
 }
 
 .flex-container {
@@ -857,6 +805,16 @@ img {
   margin-bottom: 2rem;
 }
 
+.experience__header::before, .experience__header::after {
+  content: '';
+  display: inline-block;
+  border-top: 0.25rem solid #ff426e;
+  width: 5rem;
+  margin: 0 1rem;
+  -webkit-transform: translateY(-0.8rem);
+          transform: translateY(-0.8rem);
+}
+
 .experience .date {
   color: #a8a6ae;
 }
@@ -911,42 +869,21 @@ img {
   }
 }
 
-/* 
-Contact form will possibly contain:
-- Very simple form with client's name, email, and message. Button to send message.
-- Probably to the side of that is some short text, along with my email address and work hours, possibly the state I reside in
-    <section id="contact">
-      <div class="contact__info">
-      <h4>Contact</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          vitae ratione nihil molestias provident, autem impedit quis. Maxime
-          tenetur quidem dolorem dicta cupiditate, accusantium voluptatum
-          itaque!
-        </p>
-        <p>Redlands, California, USA</p>
-        <p>matthew.mcgrath.b@gmail.com</p>
-        <p>Mon - Fri 8:00 AM to 8 PM</p>
-      </div>
-      <div class="contact__form">
-        <input type="text" />
-        <input type="text" />
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </div>
-    </section>
-*/
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #b3b3b3;
 }
+
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   color: #b3b3b3;
 }
+
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
   color: #b3b3b3;
 }
+
 input::placeholder,
 textarea::placeholder {
   color: #b3b3b3;
@@ -954,8 +891,17 @@ textarea::placeholder {
 
 .contact__info > p,
 .contact__form > p {
-  color: #b3b1ba;
-  margin-bottom: 2rem;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 899px) {
+  .contact__info > p,
+  .contact__form > p {
+    font-size: 1.1rem;
+    color: #b3b1ba;
+    margin-bottom: 2rem;
+  }
 }
 
 .contact {
@@ -969,11 +915,6 @@ textarea::placeholder {
   gap: 2rem;
 }
 
-.contact h4,
-.contact h5 {
-  font-size: 2rem;
-}
-
 @media screen and (min-width: 899px) {
   .contact {
     -webkit-box-orient: horizontal;
@@ -984,6 +925,18 @@ textarea::placeholder {
         -ms-flex-pack: justify;
             justify-content: space-between;
     gap: 1rem;
+  }
+}
+
+.contact h4,
+.contact h5 {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 899px) {
+  .contact h4,
+  .contact h5 {
+    font-size: 2rem;
   }
 }
 
@@ -1068,6 +1021,7 @@ textarea::placeholder {
 }
 
 .contact__info .contact__details {
+  font-size: 0.99rem;
   margin-top: 1rem;
 }
 
@@ -1083,11 +1037,26 @@ textarea::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .contact .contact__detail img {
   width: 20px;
   aspect-ratio: 1.25;
+}
+
+.contact .contact__detail p,
+.contact .contact__detail a {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.contact .contact__detail p:hover,
+.contact .contact__detail a:hover {
+  -webkit-transform: translateX(0.25rem);
+          transform: translateX(0.25rem);
 }
 
 @media screen and (min-width: 899px) {
@@ -1196,40 +1165,21 @@ textarea::placeholder {
   border-radius: 50%;
 }
 
-.hero a:hover,
 .footer a:hover {
   background-color: white;
 }
 
-.hero a svg,
 .footer a svg {
   fill: white;
   width: 65%;
   height: 65%;
 }
 
-.hero a:hover svg,
 .footer a:hover svg {
   fill: #ff426e;
 }
 
-.footer .footer__copyright span:nth-child(2) {
-  color: #ff426e;
-}
-
-.hero a svg,
-.footer a svg {
-  fill: white;
-  width: 65%;
-  height: 65%;
-}
-
-.hero a:hover svg,
-.footer a:hover svg {
-  fill: #ff426e;
-}
-
-.footer .footer__copyright span:nth-child(2) {
+.footer__copyright span:nth-child(2) {
   color: #ff426e;
 }
 /*# sourceMappingURL=style.css.map */
