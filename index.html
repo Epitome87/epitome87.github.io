@@ -8,22 +8,18 @@
     <title>Matthew McGrath | Web Developer</title>
   </head>
   <body>
+
     <!-- Header / Navigation -->
-    <header class="header">
-      <div class="header__logo">
-        <p>MBM</p>
-      </div>
-      <!-- Hamburger Menu -->
-      <div>---</div>
-      <!-- <nav>
-        <ul>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Skills</li>
-          <li>Contact</li>
-        </ul>
-      </nav> -->
-    </header>
+    <div class="main-nav" id="main-nav">
+      <a href="/">Home</a>
+      <!-- <div class="links"> -->
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      <!-- </div> -->
+      <a href="#" class="hamburger">&#9776;</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -37,7 +33,7 @@
     <div id="particles-js" class="particles-js"></div>
 
     <!-- About Me Section -->
-    <section class="about">
+    <section class="about" id="about">
       <!-- <h2 class="about__header">About</h2> -->
       <div class="container">
         <h2 class="about__header">Who I am</h2>
@@ -86,7 +82,7 @@
     </section>
 
     <!-- Experience/Skills Section -->
-    <section class="experience">
+    <section class="experience" id="experience">
       <h4 class="experience__header">Skills & Experience</h4>
       <div class="flex-container">
         <div class="skills">
@@ -286,7 +282,7 @@
     </section>
 
     <!-- Contact Me Section -->
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="contact__info">
         <h4>Contact Me</h4>
         <p>
