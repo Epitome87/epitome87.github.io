@@ -103,6 +103,8 @@ img {
   }
   position: relative;
 
+  margin-top: 4rem;
+
   &__header {
     // We don't want this huge floating heading to block input or receive highlighting
     user-select: none;

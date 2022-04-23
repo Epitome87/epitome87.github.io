@@ -201,7 +201,7 @@ header {
   content: '';
   position: absolute;
   width: 0;
-  height: 5px;
+  height: 4px;
   display: block;
   margin-top: 4px;
   right: 0;
@@ -501,6 +501,7 @@ img {
   margin: 0 auto;
   max-width: unset;
   position: relative;
+  margin-top: 4rem;
 }
 
 @media screen and (min-width: 899px) {
