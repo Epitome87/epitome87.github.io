@@ -20,7 +20,8 @@ header {
     margin: 0.5rem;
   }
 
-  &__links {}
+  &__links {
+  }
 
   &__links ul {
     display: flex;
@@ -35,7 +36,7 @@ header {
       content: '';
       position: absolute;
       width: 0;
-      height: 5px;
+      height: 4px;
       display: block;
       margin-top: 4px;
       right: 0;
@@ -67,8 +68,6 @@ header {
     width: 30px;
     height: 21px;
   }
-
-
 }
 
 @media (max-width: 600px) {
@@ -87,7 +86,7 @@ header {
       flex-direction: column;
       gap: 0;
     }
-  
+
     &__links li {
       text-align: center;
 
@@ -100,21 +99,20 @@ header {
         width: 0;
         height: 0;
       }
-  
+
       &:hover::after {
         width: 0;
         height: 0;
       }
     }
-  
+
     &__links li a {
       padding: 0.25rem 0.5rem;
     }
-  
+
     &__links.active {
       display: flex;
-  background-color: $color-primary-dark * 0.9;
-
+      background-color: $color-primary-dark * 0.9;
     }
 
     .hamburger {
@@ -122,44 +120,3 @@ header {
     }
   }
 }
-
-
-
-// .header {
-//   // background-color: red * 0.1;
-//   padding: 1rem 2rem;
-//   display: flex;
-//   justify-content: space-between;
-
-//   &__logo {
-//   }
-// }
-
-// nav {
-//   ul {
-//     display: flex;
-//     gap: 3rem;
-//     list-style-type: none;
-//   }
-
-//   li {
-//     position: relative;
-//   }
-
-//   li::after {
-//     content: '';
-//     position: absolute;
-//     width: 0;
-//     height: 5px;
-//     display: block;
-//     margin-top: 4px;
-//     right: 0;
-//     background: $color-red;
-//     transition: width 0.2s ease;
-//   }
-
-//   li:hover::after {
-//     width: 100%;
-//     left: 0;
-//   }
-// }
