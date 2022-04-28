@@ -120,6 +120,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: $margin-mobile;
 
     @include breakpoint(md) {
@@ -161,6 +162,7 @@ img {
         align-self: stretch;
         padding: 2rem;
         border: 5px solid $color-red;
+        max-width: 75ch;
       }
     }
   }
