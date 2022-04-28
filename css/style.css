@@ -2,6 +2,7 @@
 /**************** Fonts *******************/
 /*************** Spacing ******************/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
 @media (prefers-color-scheme: dark) {
   :root {
     --clr-text: white;
@@ -72,7 +73,6 @@ img {
   width: 100%;
 }
 
-a,
 a:link,
 a:visited {
   text-decoration: none;
@@ -104,6 +104,7 @@ h6 {
   font-size: 1.8rem;
   text-align: center;
   /* Headers need more white-space! */
+  font-family: 'Merriweather', serif;
 }
 
 @media screen and (min-width: 899px) {
@@ -180,7 +181,9 @@ header {
   color: white;
 }
 
-.navbar__logo {
+.navbar .navbar__logo {
+  font-family: 'Merriweather', serif;
+  color: #ff426e;
   font-size: 1.5rem;
   margin: 0.5rem;
 }
@@ -349,6 +352,10 @@ header {
 
 .hero__cta:hover {
   background-color: #ff426e !important;
+}
+
+.hero__header {
+  font-family: 'Poppins', sans-serif;
 }
 
 @media screen and (min-width: 899px) {
@@ -888,7 +895,7 @@ img {
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   background-color: #d6385d;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 1rem;
   border-radius: 15px;
   font-weight: 700;
 }

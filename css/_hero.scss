@@ -58,6 +58,8 @@
   }
 
   &__header {
+    font-family: 'Poppins', sans-serif;
+
     @include breakpoint(md) {
       letter-spacing: 15px;
     }

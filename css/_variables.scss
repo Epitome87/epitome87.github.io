@@ -1,9 +1,16 @@
 /**************** Colors ******************/
 $color-primary-dark: hsl(240, 9%, 13%);
 $color-red: hsl(346, 100%, 63%);
+// This color also isn't bad as my primary #60a5fa
 $color-selection: hsl(340, 100%, 50%);
 $color-white: hsl(0, 0%, 100%);
-$color-gradient-hero: linear-gradient(271deg, hsl(194, 100%, 81%) 30%, hsl(268, 74%, 65%) 50%, hsl(341, 76%, 76%) 70%, hsl(40, 74%, 73%) 94%);
+$color-gradient-hero: linear-gradient(
+  271deg,
+  hsl(194, 100%, 81%) 30%,
+  hsl(268, 74%, 65%) 50%,
+  hsl(341, 76%, 76%) 70%,
+  hsl(40, 74%, 73%) 94%
+);
 // $color-gradient-hero: linear-gradient(to left, hsl(194, 100%, 63%) 30%, hsl(268, 100%, 63%) 50%, hsl(346, 100%, 63%) 70%, hsl(40, 100%, 63%) 94%);
 // $color-gradient-hero: linear-gradient(to left, $color-red);
 /**************** Fonts *******************/

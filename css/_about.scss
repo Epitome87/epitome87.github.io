@@ -47,6 +47,9 @@ $r: clamp(4em, 10vw, 7.5em);
 .center {
   // We don't want user to highlight my avatar and see the goofy clip shape
   user-select: none;
+
+  // TODO: Do I want my avatar bottom-aligned with the body?
+  // align-self: flex-end;
 }
 
 figure {

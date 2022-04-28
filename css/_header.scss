@@ -15,7 +15,10 @@ header {
   align-items: center;
   color: white;
 
-  &__logo {
+  // Using &__logo seems to give a specificity of 0 -- thus the global anchor style overtakes -- why?!
+  .navbar__logo {
+    font-family: 'Merriweather', serif;
+    color: $color-red;
     font-size: 1.5rem;
     margin: 0.5rem;
   }
