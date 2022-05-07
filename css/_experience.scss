@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -33,13 +35,16 @@
 }
 
 .skill {
-  // TODO: Figure out design and colors cheme of a Skill
+  // TODO: Figure out design and color scheme of a Skill
   // Red background with white font isn't enough contras, but I like!
-  color: $color-red;
   color: $color-white;
-  background-color: $color-primary-dark * 1.2;
+  // background-color: $color-primary-dark * 1.2;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-  background-color: $color-red * 0.84;
+  // TODO: SASS * isn't translating properly
+  // background-color: $color-red * 0.84;
+  background-color: color.scale($color-red, $lightness: -16%);
+  background-color: #d6385d;
+
   // background-color: var(--clr-text);
   // TODO: Make these multiplied colors their own variable,
   // as CSS variables don't allow these calculations
@@ -68,8 +73,11 @@
   }
 
   .date {
-    color: $font-color-primary * 0.75;
+    // TODO: SASS * isn't translating properly
+    // color: $font-color-primary * 0.75;
+    color: color.scale($font-color-primary, $lightness: -20%);
   }
+
   .header {
     font-size: $font-size-subheading;
   }

@@ -1,5 +1,7 @@
+@use 'sass:color';
+
 header {
-  background-color: $color-primary-dark;
+  background-color: color.change($color-primary-dark, $alpha: 1);
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -18,9 +20,20 @@ header {
   // Using &__logo seems to give a specificity of 0 -- thus the global anchor style overtakes -- why?!
   .navbar__logo {
     font-family: 'Merriweather', serif;
-    color: $color-red;
+    color: color.scale($color-red, $lightness: 0%);
     font-size: 1.5rem;
     margin: 0.5rem;
+
+    // Use these values if I have image for nav logo
+    width: 50px;
+    height: 50px;
+    background-color: $color-red;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+    }
+    // End of values for image
   }
 
   &__links {
@@ -115,7 +128,9 @@ header {
 
     &__links.active {
       display: flex;
-      background-color: $color-primary-dark * 0.9;
+      // Sass * is dep!
+      // background-color: $color-primary-dark * 0.9;
+      background-color: darken($color-primary-dark, 0.9);
     }
 
     .hamburger {

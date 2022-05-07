@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .projects {
   // Removing section paddings
   padding-inline: $margin-mobile;
@@ -52,7 +54,8 @@
     }
 
     .project {
-      height: 350px;
+      // TODO: This was 350px -- which do I prefer?!
+      height: 300px;
       border-radius: $subtle;
       background-repeat: no-repeat;
       background-size: cover;
@@ -70,7 +73,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $color-primary-dark * 0.8;
+        background-color: color.scale($color-primary-dark, $lightness: -20%);
         border-radius: $subtle;
         transition: 0.5s ease-in-out;
         border: 2px solid $color-red;
@@ -101,7 +104,8 @@
         background-image: url(../images/preview-dad-jokes.png);
       }
       &:nth-of-type(5) {
-        background-image: url(../images/preview-stock-forum.png);
+        // background-image: url(../images/preview-stock-forum.png);
+        background-image: url(../images/preview-omnifood.png);
       }
       &:nth-of-type(6) {
         background-image: url(../images/preview-personal-portfolio.png);
