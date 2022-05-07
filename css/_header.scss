@@ -76,13 +76,14 @@ header {
   .hamburger {
     position: absolute;
     cursor: pointer;
-    top: 0.75rem;
+    top: 1rem;
     right: 1rem;
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    // Increase hamburger size, fix alignment caused line-height quirks
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    // Make it more click-able!
+    padding: 0.25rem;
   }
 }
 
@@ -134,7 +135,7 @@ header {
     }
 
     .hamburger {
-      display: flex;
+      display: inline-block;
     }
   }
 }
