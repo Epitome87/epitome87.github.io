@@ -40,17 +40,29 @@
   }
 
   &__grid {
+    // TODO: This breaks momentarily around 1004px to 1012px -- has one very wide column
     display: grid;
     // On mobile, singular column of projects
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
 
+    @media screen and (min-width: 675px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include breakpoint(md) {
-      grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+      // grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+      // grid-template-columns: repeat(2, 1fr);
     }
 
     @include breakpoint(lg) {
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      // grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .project {

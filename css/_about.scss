@@ -81,21 +81,21 @@ figure {
   &::before {
     content: '';
     padding: $r;
-    border-radius: 50%;
+    border-radius: $circle;
     background-color: $color-red;
   }
 
   &:hover {
     --hov: 1;
   }
-}
 
-img {
-  width: calc(2 *#{$r});
-  border-radius: $r;
-  // transform: translatey(calc((1 - var(--hov)) * 10%))
-  //   scale(calc(1.25 + 0.05 * var(--hov)));
-  transform: translateY(calc((0.5 - var(--hov)) * 10%)) scale(calc(1.25 + 0.05 * var(--hov)));
+  img {
+    width: calc(2 *#{$r});
+    border-radius: $r;
+    // transform: translatey(calc((1 - var(--hov)) * 10%))
+    //   scale(calc(1.25 + 0.05 * var(--hov)));
+    transform: translateY(calc((0.5 - var(--hov)) * 10%)) scale(calc(1.25 + 0.05 * var(--hov)));
+  }
 }
 
 .about {
@@ -142,7 +142,7 @@ img {
         position: relative;
         top: -100px;
         left: 5px;
-        border-radius: 50%;
+        border-radius: $circle;
       }
     }
 
@@ -151,9 +151,9 @@ img {
       flex-direction: column;
       gap: 1rem;
       justify-content: space-between;
-      background-color: color.scale($color-primary-dark, $lightness: -20%);
-      border: 3px solid $color-red;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      // background-color: color.scale($color-primary-dark, $lightness: -20%);
+      // border: 3px solid $color-red;
+      // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
       font-size: $font-size-body * 0.8;
       text-align: justify;
       padding: 0.5rem;
@@ -163,8 +163,8 @@ img {
         font-size: $font-size-body;
         align-self: stretch;
         padding: 2rem;
-        border: 5px solid $color-red;
         max-width: 75ch;
+        // border: 5px solid $color-red;
       }
     }
   }
@@ -172,23 +172,25 @@ img {
   button {
     font-size: $font-size-body * 0.8;
     padding: 0.2rem 0.5rem;
+    align-self: center;
 
     @include breakpoint(md) {
       font-size: $font-size-body;
+      align-self: flex-start;
     }
   }
 
   &__traits {
-    background-color: color.scale($color-primary-dark, $lightness: -20%);
-
-    border-block: 1px solid $color-red;
-
-    margin-block: 5rem;
+    // TODO: This is nice and elegant, but there's a small period where the traits are stacked with 3 on top and 1 on bottom
+    // -- which is rather ugly! Maybe I'll just hard-code a 1 column mobile layout, 2 on tablets, and 4 on desktop
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     row-gap: 0.5rem;
     column-gap: 1rem;
     justify-content: space-between;
+    background-color: color.scale($color-primary-dark, $lightness: -20%);
+    border-block: 1px solid $color-red;
+    margin-block: 0rem 4rem;
 
     @include breakpoint(md) {
       column-gap: 4rem;
@@ -198,10 +200,10 @@ img {
 
   .trait {
     text-align: center;
-    // TODO: If I want these to stick out more...
     padding: 0.5rem 1rem;
   }
 
+  // TODO: Doesn't actually exist! Do I want icons for this component?
   .trait__image {
   }
 

@@ -13,12 +13,16 @@ textarea::placeholder {
     color: color.scale($font-color-primary, $lightness: -20%);
     font-size: $font-size-body * 0.8;
     margin-bottom: $margin-mobile;
+    // TODO: Chagne? Breaking design standard -- but contact section feels too cramped!
+    margin-bottom: 2rem;
   }
 
   @include breakpoint(md) {
     > p {
       font-size: $font-size-body;
       margin-bottom: $margin-desktop;
+      // TODO: Chagne? Breaking design standard -- but contact section feels too cramped!
+      margin-bottom: 3rem;
     }
   }
 }
@@ -26,17 +30,20 @@ textarea::placeholder {
 .contact {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
+  // TODO: Keep this? I prefer this on mobile, but seems frowned upon!
+  text-align: justify;
 
   @include breakpoint(md) {
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
+    text-align: left;
   }
 
-  h4,
-  h5 {
+  h6 {
     font-size: $font-size-subheading;
+    margin-bottom: $margin-mobile;
 
     @include breakpoint(md) {
       font-size: 2rem;
@@ -61,7 +68,7 @@ textarea::placeholder {
     align-items: center;
     width: 3rem;
     height: 3rem;
-    border-radius: 50%;
+    border-radius: $circle;
   }
 
   a:hover {
@@ -79,10 +86,10 @@ textarea::placeholder {
   &__info {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
 
     @include breakpoint(md) {
       flex: 0 0 48%;
+      padding-bottom: 75px;
     }
 
     address {
@@ -101,6 +108,9 @@ textarea::placeholder {
     .contact__details {
       font-size: $font-size-body * 0.9;
       margin-top: $margin-mobile;
+
+      // TODO: Do I want to keep this pushed to bottom, to align with the form?
+      // margin-top: auto;
 
       > *:not(:last-child) {
         margin-bottom: $margin-mobile;
@@ -142,6 +152,7 @@ textarea::placeholder {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      gap: 1.5rem;
 
       @include breakpoint(sm) {
         flex-direction: row;
@@ -156,7 +167,7 @@ textarea::placeholder {
     form {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.75rem;
 
       input {
         height: 50px;
