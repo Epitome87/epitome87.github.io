@@ -76,6 +76,54 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
+      // TODO: Testing separating each letter into its own span
+      // TODO: The issue with this not working is because spans need to be inline-block to animate!
+      // TODO: But when we put each letter in its own span, we break the cool background text clipping effect :(
+      span {
+        display: inline-block;
+        background: $color-red;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation: bounce-6 1s ease;
+
+        &:first-child {
+          background-color: hsl(194, 100%, 81%);
+          animation-delay: 0;
+        }
+
+        &:nth-child(2) {
+          background-color: hsl(194, 100%, 81%);
+          animation-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+          background-color: hsl(223, 84%, 79%);
+          animation-delay: 0.4s;
+        }
+
+        &:nth-child(4) {
+          background-color: hsl(268, 74%, 65%);
+          animation-delay: 0.6s;
+        }
+
+        &:nth-child(5) {
+          background-color: hsl(303, 44%, 65%);
+          animation-delay: 0.8s;
+        }
+
+        &:nth-child(6) {
+          background-color: hsl(354, 71%, 78%);
+          animation-delay: 1s;
+        }
+
+        &:last-child {
+          background-color: hsl(40, 74%, 73%);
+          animation-delay: 1.2s;
+        }
+      }
+
       @include breakpoint(sm) {
         font-size: 5rem;
       }
@@ -106,12 +154,26 @@
   }
 
   &__subheader {
-    font-size: calc(#{$font-size-subheading} * 0.75);
+    font-size: calc($font-size-subheading * 0.75);
     margin-block: $margin-mobile;
+
+    // TODO: Trying animations
+    transform: translateX(-110%);
+    animation: slide-in 0.5s 0.6s forwards ease-in-out;
 
     @include breakpoint(md) {
       letter-spacing: 3px;
       font-size: $font-size-subheading;
     }
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-110%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 }

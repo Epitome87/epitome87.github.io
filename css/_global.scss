@@ -20,6 +20,9 @@
 
 html {
   overflow-y: scroll;
+
+  // If responsively designed, overflow in the x will only happen when I transform an object horizontally for an animation
+  overflow-x: hidden;
   height: 100vh;
 }
 
@@ -131,4 +134,140 @@ button {
 
 button:hover {
   background-color: $color-red;
+}
+
+.reveal {
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.active.fade-top {
+  animation: fade-top 1s ease-in;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+
+.active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+
+.active.fade-right {
+  animation: fade-right 1s ease-in;
+}
+
+@keyframes fade-top {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(105%);
+  }
+
+  90% {
+    transform: scale(95%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.active.bounce-in {
+  animation: bounce-6 1s ease;
+
+  // &.first-name {
+  //   animation-iteration-count: infinite;
+  //   animation-delay: 0.5s;
+  // }
+}
+
+@keyframes bounce-6 {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-30px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.squeeze {
+  animation: squeeze 0.3s forwards ease-in;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0.9, 1);
+  }
+  70% {
+    transform: scale(0.9, 0.3);
+  }
+  100% {
+    transform: scale(0.9, 0.8);
+  }
 }

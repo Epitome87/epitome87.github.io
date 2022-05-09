@@ -32,7 +32,10 @@
     <!-- Hero Section -->
     <section class="hero">
       <h1 class="hero__header">
-        <span class="first-name">Matthew</span>
+        <!-- <span class="first-name reveal bounce-in">Matthew</span> -->
+        <span class="first-name">
+          <span>M</span><span>a</span><span>t</span><span>t</span><span>h</span><span>e</span><span>w</span>
+        </span>
         <span class="last-name">McGrath</span>
       </h1>
       <p class="hero__subheader">Bridges dreams and reality through code</p>
@@ -46,14 +49,14 @@
       <div class="container">
         <h2 class="about__header">Who I am</h2>
         <div class="about__introduction">
-          <div class="center">
+          <div class="center reveal bounce-in">
             <figure>
               <img src="images/matthew-cartoon.png" alt="Matthew McGrath" />
             </figure>
           </div>
           <!-- TODO: This wall of text is ugly on mobile -->
           <div class="about__body">
-            <p>
+            <p class="reveal fade-bottom">
               I'm Matthew McGrath, a long-time programmer beginning an exciting journey in web development. Since my
               first 'Hello, World' in high school, I have had an unbound curiosity for code and the problem-solving that
               accompanies it. With a strong pursuit for knowledge, I am perpetually improving my full-stack skills.
@@ -95,7 +98,7 @@
         <div class="skills">
           <p class="skills__header">Frontend</p>
           <p class="skills__subheader">Seeing ideas grow inside of the browser is always exciting</p>
-          <div class="skills__list">
+          <div class="skills__list reveal fade-left">
             <div class="skill">React</div>
             <div class="skill">HTML5</div>
             <div class="skill">CSS6</div>
@@ -106,7 +109,7 @@
           </div>
           <p class="skills__header">Backend</p>
           <p class="skills__subheader">Unseen but never unnoticed, crafting the perfect algorithms</p>
-          <div class="skills__list">
+          <div class="skills__list reveal fade-left">
             <div class="skill">Node.js</div>
             <div class="skill">Express</div>
             <div class="skill">MongoDB</div>
@@ -114,7 +117,7 @@
           </div>
           <p class="skills__header">Tools</p>
           <p class="skills__subheader">Helpful tools I wield</p>
-          <div class="skills__list">
+          <div class="skills__list reveal fade-left">
             <div class="skill">Git</div>
             <div class="skill">Postman</div>
             <div class="skill">NPM</div>
@@ -123,7 +126,7 @@
           </div>
           <p class="skills__header">Never-Ending Journey</p>
           <p class="skills__subheader">Some skills I'm currently acquiring</p>
-          <div class="skills__list">
+          <div class="skills__list reveal fade-left">
             <div class="skill">TypeScript</div>
             <div class="skill">Next.js</div>
             <div class="skill">React Native</div>
@@ -133,31 +136,31 @@
         </div>
         <div class="education">
           <ul>
-            <li class="item">
+            <li class="item reveal fade-right">
               <img src="images/laptop-code-solid.svg" alt="Laptop" />
               <p class="date">2021 - Present</p>
               <p class="header">React Bootcamp</p>
               <p class="description">Learned modern React, Redux, Hooks</p>
             </li>
-            <li class="item">
+            <li class="item reveal fade-right">
               <img src="images/laptop-code-solid.svg" alt="Laptop" />
               <p class="date">2021 - 2022</p>
               <p class="header">Web Dev Bootcamp</p>
               <p class="description">Learned HTML5, CSS6, JavaScript</p>
             </li>
-            <li class="item">
+            <li class="item reveal fade-right">
               <img src="images/briefcase-solid.svg" alt="Work briefcase" />
               <p class="date" d>2010 - 2020</p>
               <p class="header">Indie Game Developer</p>
               <p class="description">Released 2 Xbox Live games, collaborated on several others</p>
             </li>
-            <li class="item">
+            <li class="item reveal fade-right">
               <img src="images/graduation-cap-solid.svg" alt="Graduation cap" />
               <p class="date">2012 - 2015</p>
               <p class="header">B.S in Game Software Development</p>
               <p class="description">4.0 GPA, Dean's List</p>
             </li>
-            <li class="item">
+            <li class="item reveal fade-right">
               <img src="images/graduation-cap-solid.svg" alt="Graduation cap" />
               <p class="date" d>2001 - 2005</p>
               <p class="header">Yucaipa High School</p>
@@ -174,12 +177,12 @@
       <div class="projects__subheader">
         <p>A small selection of my work</p>
         <p>
-          <a href="https://github.com/Epitome87">View More <span>→</span></a>
+          <a href="https://github.com/Epitome87" target="_blank" rel="noopener noreferrer">View More <span>→</span></a>
         </p>
       </div>
       <div class="projects__grid">
         <!-- TODO: Fill this dynamically with JavaScript and JSON? -->
-        <div class="project">
+        <div class="project reveal fade-bottom">
           <div class="project__overlay">
             <h5 class="project__header">Flat UI Clone</h5>
             <p class="project__description">
@@ -196,7 +199,7 @@
             </div>
           </div>
         </div>
-        <div class="project">
+        <div class="project reveal fade-bottom">
           <div class="project__overlay">
             <h5 class="project__header">Frontend Collection</h5>
             <p class="project__description">
@@ -217,7 +220,7 @@
             </div>
           </div>
         </div>
-        <div class="project">
+        <div class="project reveal fade-bottom">
           <div class="project__overlay">
             <h5 class="project__header">Recipe App</h5>
             <p class="project__description">Fullstack app that allows for searching for recipes</p>
@@ -236,7 +239,7 @@
             </div>
           </div>
         </div>
-        <div class="project">
+        <div class="project reveal fade-bottom">
           <div class="project__overlay">
             <h5 class="project__header">Dad Jokes</h5>
             <p class="project__description">
@@ -257,7 +260,7 @@
             </div>
           </div>
         </div>
-        <div class="project">
+        <div class="project reveal fade-bottom">
           <div class="project__overlay">
             <h5 class="project__header">Omnifood</h5>
             <p class="project__description">
@@ -274,7 +277,7 @@
             </div>
           </div>
         </div>
-        <div class="project">
+        <div class="project reveal fade-bottom">
           <div class="project__overlay">
             <h5 class="project__header">Personal Portfolio</h5>
             <p class="project__description">
@@ -305,17 +308,17 @@
           full-time positions as a Junior front-end or full-stack web developer.
         </p>
         <address class="contact__details">
-          <div class="contact__detail">
+          <div class="contact__detail reveal fade-left">
             <img src="images/location-dot-solid.svg" alt="Map pin" />
             <a href="https://www.google.com/maps/place/Redlands,+CA" target="_blank" rel="noopener noreferrer"
               >Redlands, California, USA</a
             >
           </div>
-          <div class="contact__detail">
+          <div class="contact__detail reveal fade-left">
             <img src="images/envelope-solid.svg" alt="Email" />
             <a href="mailto:matthew.mcgrath.b@gmail.com">matthew.mcgrath.b@gmail.com</a>
           </div>
-          <div class="contact__detail">
+          <div class="contact__detail reveal fade-left">
             <img src="images/clock-solid.svg" alt="Clock" />
             <p>Mon - Fri 8:00 AM to 8 PM</p>
           </div>
@@ -324,13 +327,19 @@
       <div class="contact__form">
         <h6>Send a Message</h6>
         <p>Reach out to me with any questions, concerns, opportunities, or simply a kind greeting!</p>
-        <form name="contact">
+        <form id="contact" action="https://formsubmit.co/rubywep@hotmail.com" method="POST" class="reveal fade-right">
           <div class="form__row">
             <input type="text" name="name" placeholder="Your Full Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
           </div>
           <textarea name="message" cols="30" rows="5" placeholder="Your Message"></textarea>
-          <button>Send Message</button>
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Thank you for reaching out to me! I will try my best to respond in a timely manner. For your convenience, a copy of your original message can be found below."
+          />
+          <input type="hidden" name="_template" value="table" />
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </section>

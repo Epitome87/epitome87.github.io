@@ -171,7 +171,6 @@ figure {
 
   button {
     font-size: $font-size-body * 0.8;
-    padding: 0.2rem 0.5rem;
     align-self: center;
 
     @include breakpoint(md) {
