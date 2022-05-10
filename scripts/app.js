@@ -4,6 +4,8 @@ particlesJS('particles-js', {
     // color: { value: '#33FCFF' },
     color: {
       value: ['#a0e9ff', '#a162e8', '#f093b0', '#edca85'],
+      value: '#61a6fa',
+      // value: '#ff426e',
     },
     shape: {
       type: ['polygon'],

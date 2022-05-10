@@ -43,7 +43,7 @@
   // TODO: SASS * isn't translating properly
   // background-color: $color-red * 0.84;
   background-color: color.scale($color-red, $lightness: -16%);
-  background-color: #d6385d;
+  // background-color: #d6385d;
 
   // background-color: var(--clr-text);
   // TODO: Make these multiplied colors their own variable,
@@ -85,7 +85,10 @@
   .description {
   }
 
+  svg,
   img {
+    // Color works if they are inline svgs
+    color: $color-red;
     width: 1.75rem;
     aspect-ratio: 1.25;
     position: absolute;

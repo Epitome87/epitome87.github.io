@@ -124,7 +124,9 @@ textarea::placeholder {
     align-items: center;
     justify-content: flex-start;
 
+    svg,
     img {
+      color: $color-red;
       width: 20px;
       aspect-ratio: 1.25;
     }

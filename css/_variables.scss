@@ -1,8 +1,10 @@
 /**************** Colors ******************/
 $color-primary-dark: hsl(240, 9%, 13%);
 $color-red: hsl(346, 100%, 63%);
-// This color also isn't bad as my primary #60a5fa
+$color-red: hsl(213, 94%, 68%);
+// This color also isn't bad as my primary #60a5fa  #1d4ed8
 $color-selection: hsl(340, 100%, 50%);
+$color-selection: $color-red;
 $color-white: hsl(0, 0%, 100%);
 $color-gradient-hero: linear-gradient(
   to right,

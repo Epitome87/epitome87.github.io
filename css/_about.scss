@@ -18,12 +18,15 @@
   top: -2rem;
   left: 1rem;
 
-  background-image: linear-gradient(
-    to bottom,
-    hsla(346, 100%, 63%, 0.5) 0%,
-    hsla(346, 100%, 63%, 0.1) 70%,
-    hsla(346, 100%, 63%, 0)
-  );
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   hsla(346, 100%, 63%, 0.5) 0%,
+  //   hsla(346, 100%, 63%, 0.1) 70%,
+  //   hsla(346, 100%, 63%, 0)
+  // );
+  background-image: linear-gradient(to bottom, transparentize($color-red, 0.5) 0%, transparentize($color-red, 0.9) 70%);
+
+  // color.adjust($color-red, $alpha: 0)
   background-size: 100%;
   background-repeat: repeat;
 
@@ -188,7 +191,16 @@ figure {
     column-gap: 1rem;
     justify-content: space-between;
     background-color: color.scale($color-primary-dark, $lightness: -20%);
+    // TODO: Decide -- do I like this more?! Kind of! But it demands attention -- yet this Traits section is really not important...
+    // TODO: I like red bg or white! If red, do I prefer white or black font...
+    // TODO: Probably white font, but black makes it less prominent -- good until I can think of copy that's better than just 4 random traits!
+    background-color: #f8fafc;
+    background-color: $color-red;
     border-block: 1px solid $color-red;
+    // TODO:
+    // border-block: 1px solid white;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+
     margin-block: 0rem 4rem;
 
     @include breakpoint(md) {
@@ -209,7 +221,13 @@ figure {
   .trait__header {
     color: color.scale($color-white, $lightness: -20%);
     font-size: $font-size-body;
+    // TODO: Trying this smaller size
+    font-size: $font-size-body * 0.85;
     font-weight: $font-weight-heading;
+
+    // TODO:
+    color: #171717;
+    color: #fafafa;
 
     @include breakpoint(xl) {
       font-size: $font-size-subheading;
@@ -219,6 +237,12 @@ figure {
   .trait__body {
     color: color.scale($color-white, $lightness: -25%);
     font-size: $font-size-body * 0.8;
+    // TODO: Trying this smaller size
+    font-size: $font-size-body * 0.6;
+    color: #262626;
+    color: #f5f5f5;
+
+    font-weight: 500;
 
     @include breakpoint(xl) {
       font-size: $font-size-body;

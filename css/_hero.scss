@@ -79,9 +79,10 @@
       // TODO: Testing separating each letter into its own span
       // TODO: The issue with this not working is because spans need to be inline-block to animate!
       // TODO: But when we put each letter in its own span, we break the cool background text clipping effect :(
+
       span {
         display: inline-block;
-        background: $color-red;
+        background-color: $color-red !important;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -142,6 +143,8 @@
       border-radius: 5px;
       line-height: 1;
       background: $color-gradient-hero;
+      // TODO: Do I prefer this?!
+      background: $color-red;
 
       @include breakpoint(sm) {
         font-size: 4.65rem;
