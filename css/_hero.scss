@@ -7,7 +7,7 @@
   right: 0;
   bottom: 0;
   background-color: $color-primary-dark;
-  // background-color: $color-red * 0.8;
+  // background-color: $color-primary * 0.8;
   // clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
 
   // This will cover up the entire particle canvas so we can slowly blend it into the hero section
@@ -48,13 +48,21 @@
     cursor: pointer;
     padding: 0.5rem 2rem;
     text-transform: uppercase;
-    border: 3px solid $color-red;
+    border: 3px solid $color-primary;
     color: $color-white;
     background-color: transparent;
-  }
+    box-shadow: 0px 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+    transition: 0.15s ease-in-out;
 
-  &__cta:hover {
-    background-color: $color-red !important;
+    &:focus,
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &:active {
+      transform: scale(0.975);
+      box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+    }
   }
 
   &__header {
@@ -82,7 +90,7 @@
 
       span {
         display: inline-block;
-        background-color: $color-red !important;
+        background-color: $color-primary !important;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -144,7 +152,7 @@
       line-height: 1;
       background: $color-gradient-hero;
       // TODO: Do I prefer this?!
-      background: $color-red;
+      background: $color-primary;
 
       @include breakpoint(sm) {
         font-size: 4.65rem;

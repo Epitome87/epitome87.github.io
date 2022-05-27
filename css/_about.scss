@@ -24,9 +24,13 @@
   //   hsla(346, 100%, 63%, 0.1) 70%,
   //   hsla(346, 100%, 63%, 0)
   // );
-  background-image: linear-gradient(to bottom, transparentize($color-red, 0.5) 0%, transparentize($color-red, 0.9) 70%);
+  background-image: linear-gradient(
+    to bottom,
+    transparentize($color-primary, 0.5) 0%,
+    transparentize($color-primary, 0.9) 70%
+  );
 
-  // color.adjust($color-red, $alpha: 0)
+  // color.adjust($color-primary, $alpha: 0)
   background-size: 100%;
   background-repeat: repeat;
 
@@ -85,7 +89,7 @@ figure {
     content: '';
     padding: $r;
     border-radius: $circle;
-    background-color: $color-red;
+    background-color: $color-primary;
   }
 
   &:hover {
@@ -137,7 +141,7 @@ figure {
       max-width: 250px;
       max-height: 250px;
       align-self: center;
-      background-color: $color-red;
+      background-color: $color-primary;
       border-radius: $circle;
       // overflow: hidden;
 
@@ -155,7 +159,7 @@ figure {
       gap: 1rem;
       justify-content: space-between;
       // background-color: color.scale($color-primary-dark, $lightness: -20%);
-      // border: 3px solid $color-red;
+      // border: 3px solid $color-primary;
       // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
       font-size: $font-size-body * 0.8;
       text-align: justify;
@@ -167,7 +171,7 @@ figure {
         align-self: stretch;
         padding: 2rem;
         max-width: 75ch;
-        // border: 5px solid $color-red;
+        // border: 5px solid $color-primary;
       }
     }
   }
@@ -195,8 +199,8 @@ figure {
     // TODO: I like red bg or white! If red, do I prefer white or black font...
     // TODO: Probably white font, but black makes it less prominent -- good until I can think of copy that's better than just 4 random traits!
     background-color: #f8fafc;
-    background-color: $color-red;
-    border-block: 1px solid $color-red;
+    background-color: $color-primary;
+    border-block: 1px solid $color-primary;
     // TODO:
     // border-block: 1px solid white;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);

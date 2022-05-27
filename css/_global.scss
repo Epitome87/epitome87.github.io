@@ -49,7 +49,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $color-red;
+  background-color: $color-primary;
   border-radius: 20px;
 }
 
@@ -127,13 +127,21 @@ button {
   cursor: pointer;
   padding: 0.5rem 2rem;
   text-transform: uppercase;
-  border: 3px solid $color-red;
+  border: 3px solid $color-primary;
   color: var(--clr-text);
   background-color: transparent;
-}
+  box-shadow: 0px 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+  transition: 0.15s ease-in-out;
 
-button:hover {
-  background-color: $color-red;
+  &:focus,
+  &:hover {
+    background-color: $color-primary;
+  }
+
+  &:active {
+    transform: scale(0.975);
+    box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+  }
 }
 
 .reveal {
@@ -142,6 +150,10 @@ button:hover {
   &.active {
     opacity: 1;
   }
+}
+
+.highlight {
+  color: $color-primary;
 }
 
 .active.fade-top {

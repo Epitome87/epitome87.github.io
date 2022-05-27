@@ -1,10 +1,10 @@
 /**************** Colors ******************/
 $color-primary-dark: hsl(240, 9%, 13%);
-$color-red: hsl(346, 100%, 63%);
-$color-red: hsl(213, 94%, 68%);
+// $color-primary: hsl(346, 100%, 63%);
+$color-primary: hsl(213, 94%, 68%);
 // This color also isn't bad as my primary #60a5fa  #1d4ed8
 $color-selection: hsl(340, 100%, 50%);
-$color-selection: $color-red;
+$color-selection: $color-primary;
 $color-white: hsl(0, 0%, 100%);
 $color-gradient-hero: linear-gradient(
   to right,
@@ -13,9 +13,9 @@ $color-gradient-hero: linear-gradient(
   hsl(341, 76%, 76%) 70%,
   hsl(40, 74%, 73%) 94%
 );
-// $color-gradient-hero: linear-gradient(271deg, $color-red 30%, hsl(194, 100%, 63%));
+// $color-gradient-hero: linear-gradient(271deg, $color-primary 30%, hsl(194, 100%, 63%));
 // $color-gradient-hero: linear-gradient(to left, hsl(194, 100%, 63%) 30%, hsl(268, 100%, 63%) 50%, hsl(346, 100%, 63%) 70%, hsl(40, 100%, 63%) 94%);
-// $color-gradient-hero: linear-gradient(to left, $color-red);
+// $color-gradient-hero: linear-gradient(to left, $color-primary);
 /**************** Fonts *******************/
 $font-color-primary: hsl(256, 20%, 89%);
 $font-size-heading: 3rem;
@@ -23,6 +23,8 @@ $font-size-subheading: 1.5rem;
 $font-size-body: 1.1rem;
 $font-weight-body: 300;
 $font-weight-heading: 700;
+$font-family-body: 'Poppins';
+$font-family-heading: 'Merriweather';
 
 /*************** Spacing ******************/
 // Margin in "Container"

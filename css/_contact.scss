@@ -80,7 +80,7 @@ textarea::placeholder {
     height: 65%;
   }
   a:hover svg {
-    fill: $color-red;
+    fill: $color-primary;
   }
 
   &__info {
@@ -102,7 +102,7 @@ textarea::placeholder {
     }
 
     a:hover {
-      color: $color-red;
+      color: $color-primary;
     }
 
     .contact__details {
@@ -126,7 +126,7 @@ textarea::placeholder {
 
     svg,
     img {
-      color: $color-red;
+      color: $color-primary;
       width: 20px;
       aspect-ratio: 1.25;
     }
@@ -177,7 +177,7 @@ textarea::placeholder {
         color: $color-white;
         background-color: var(--clr-background);
         border: none;
-        border: 3px solid $color-red;
+        border: 3px solid $color-primary;
         padding-left: 1rem;
       }
 
@@ -185,7 +185,7 @@ textarea::placeholder {
         border-radius: $subtle;
         color: $color-white;
         background-color: var(--clr-background);
-        border: 3px solid $color-red;
+        border: 3px solid $color-primary;
         padding-left: 1rem;
         padding-top: 1rem;
       }

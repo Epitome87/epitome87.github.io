@@ -20,14 +20,14 @@ header {
   // Using &__logo seems to give a specificity of 0 -- thus the global anchor style overtakes -- why?!
   .navbar__logo {
     font-family: 'Merriweather', serif;
-    color: color.scale($color-red, $lightness: 0%);
+    color: color.scale($color-primary, $lightness: 0%);
     font-size: 1.5rem;
     margin: 0.5rem;
 
     // Use these values if I have image for nav logo
     width: 50px;
     height: 50px;
-    background-color: $color-red;
+    background-color: $color-primary;
     border-radius: $circle;
 
     img {
@@ -56,7 +56,7 @@ header {
       display: block;
       margin-top: 4px;
       right: 0;
-      background: $color-red;
+      background: $color-primary;
       transition: width 0.2s ease;
     }
 
@@ -108,7 +108,7 @@ header {
       text-align: center;
 
       &:hover {
-        background-color: $color-red;
+        background-color: $color-primary;
       }
 
       &::after {

@@ -2,20 +2,26 @@
 
 .projects {
   // Removing section paddings
-  padding-inline: $margin-mobile;
+  // padding-inline: $margin-mobile;
+  padding: 0;
   margin: 0 auto;
   max-width: unset;
-  @include breakpoint(md) {
-    padding-inline: $margin-desktop;
-  }
+
+  // @include breakpoint(md) {
+  //   padding-inline: $margin-desktop;
+  // }
 
   &__header {
+    @include breakpoint(md) {
+      padding-inline: $margin-desktop;
+    }
+
     &::before,
     &::after {
       @include breakpoint(md) {
         content: '';
         display: inline-block;
-        border-top: 0.25rem solid $color-red;
+        border-top: 0.25rem solid $color-primary;
         width: 1rem;
         margin: 0 1rem;
         transform: translateY(-0.8rem);
@@ -25,18 +31,24 @@
   }
 
   &__subheader {
+    display: flex;
+    justify-content: space-between;
     margin-block: 1rem;
 
     @include breakpoint(md) {
       font-size: $font-size-subheading;
+      padding-inline: $margin-desktop;
     }
 
+    .projects__more {
+      color: $color-primary;
+      font-size: $font-size-body;
+    }
+
+    // The arrow
     span {
-      color: $color-red;
+      color: $color-primary;
     }
-
-    display: flex;
-    justify-content: space-between;
   }
 
   &__grid {
@@ -49,6 +61,10 @@
 
     @media screen and (min-width: 675px) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(md) {
+      padding-inline: $margin-desktop;
     }
 
     @include breakpoint(md) {
@@ -72,7 +88,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
-      background-color: $color-red;
+      background-color: $color-primary;
       box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
       cursor: pointer;
       transition: 0.3s ease-in-out;
@@ -88,7 +104,7 @@
         background-color: color.scale($color-primary-dark, $lightness: -20%);
         border-radius: $subtle;
         transition: 0.5s ease-in-out;
-        border: 2px solid $color-red;
+        border: 2px solid $color-primary;
         padding-block: 0.5rem;
       }
 
@@ -145,6 +161,79 @@
         display: flex;
         gap: $margin-desktop;
       }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    font-size: $font-size-body * 0.8;
+    margin-block: 3rem 0;
+    text-align: left;
+    text-align: center;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      text-align: left;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 10rem;
+      font-size: $font-size-body;
+    }
+
+    h2 {
+      font-family: $font-family-body;
+      font-size: $font-size-subheading * 0.8;
+      text-align: inherit;
+
+      @include breakpoint(md) {
+        font-size: $font-size-subheading;
+      }
+    }
+
+    // The "Hire Me" CTA
+    a {
+      margin: 0;
+      // TODO: Remove these if I decide not to use a background color on the "Hire Me" sub-section
+      // background-color: $color-primary-dark;
+      // border-color: $color-white;
+      // background: linear-gradient(
+      //   -45deg,
+      //   hsl(213, 94%, 80%),
+      //   hsl(213, 94%, 28%),
+      //   hsl(213, 94%, 78%),
+      //   hsl(213, 94%, 18%)
+      // );
+      // background-size: 400% 400%;
+      // animation: gradient 10s ease infinite;
+      // border: none;
+    }
+    // TODO: Use background?
+    // background-color: $color-primary;
+    // background: linear-gradient(-45deg, hsl(213, 94%, 80%), hsl(213, 94%, 38%), hsl(213, 94%, 68%), hsl(213, 94%, 68%));
+    // background-size: 400% 400%;
+    // animation: gradient 15s ease infinite;
+
+    // TODO: Do I like this styling?!
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+    border-top: 2px solid $color-primary;
+    border-bottom: 2px solid $color-primary;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 }

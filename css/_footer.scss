@@ -20,6 +20,7 @@
     width: 3rem;
     height: 3rem;
     border-radius: $circle;
+    transition: 0.3s ease-in-out;
   }
 
   a:hover {
@@ -33,10 +34,10 @@
   }
 
   a:hover svg {
-    fill: $color-red;
+    fill: $color-primary;
   }
 
   &__copyright span:nth-child(2) {
-    color: $color-red;
+    color: $color-primary;
   }
 }
