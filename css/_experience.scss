@@ -64,21 +64,10 @@
     background-color: $color-primary;
   }
 
-  // TODO: Figure out design and color scheme of a Skill
-  // Red background with white font isn't enough contras, but I like!
   color: $color-white;
-  // background-color: $color-primary-dark * 1.2;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-  // TODO: SASS * isn't translating properly
-  // background-color: $color-primary * 0.84;
-  // background-color: color.scale($color-primary, $lightness: -16%);
   background-color: color.scale($color-primary-dark, $lightness: -10%);
-  // background-color: #d6385d;
 
-  // background-color: var(--clr-text);
-  // TODO: Make these multiplied colors their own variable,
-  // as CSS variables don't allow these calculations
-  // background-color: var(--clr-background);
   padding: 0.5rem 0.75rem;
   border-radius: $rounded;
   font-weight: $font-weight-heading;
@@ -91,7 +80,8 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 0.8rem;
+  line-height: 1;
+  font-size: $font-size-body * 0.75;
 
   @include breakpoint(md) {
     font-size: 1.1rem;
@@ -112,7 +102,7 @@
   }
 
   i {
-    font-size: 2.5rem;
+    font-size: $font-size-body * 1.5;
   }
 
   span {

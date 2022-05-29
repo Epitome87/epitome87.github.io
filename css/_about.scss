@@ -224,8 +224,6 @@ figure {
 
   .trait__header {
     color: color.scale($color-white, $lightness: -20%);
-    font-size: $font-size-body;
-    // TODO: Trying this smaller size
     font-size: $font-size-body * 0.85;
     font-weight: $font-weight-heading;
 
@@ -234,14 +232,12 @@ figure {
     color: #fafafa;
 
     @include breakpoint(xl) {
-      font-size: $font-size-subheading;
+      font-size: $font-size-subheading * 0.75;
     }
   }
 
   .trait__body {
     color: color.scale($color-white, $lightness: -25%);
-    font-size: $font-size-body * 0.8;
-    // TODO: Trying this smaller size
     font-size: $font-size-body * 0.6;
     color: #262626;
     color: #f5f5f5;
@@ -249,7 +245,86 @@ figure {
     font-weight: 500;
 
     @include breakpoint(xl) {
-      font-size: $font-size-body;
+      font-size: $font-size-body * 0.75;
     }
   }
 }
+
+// TODO: Testing infinite scrolling trait section
+.highway-slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  // height: 150px;
+
+  position: relative;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 9;
+    inset: 0;
+
+    // background: linear-gradient(to right, rgba(rgba($color-primary-dark, 1), 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      to right,
+      rgba($color-primary-dark, 1) 0%,
+      rgba($color-primary-dark, 0) 15%,
+      rgba($color-primary-dark, 0) 85%,
+      rgba($color-primary-dark, 0.8) 90%,
+      rgba($color-primary-dark, 1) 100%
+    );
+  }
+}
+
+.highway-barrier {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.highway-lane {
+  display: flex;
+  height: 100%;
+}
+
+.highway-car {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes translateInfinite {
+  100% {
+    transform: translateX(calc(-300px * 6));
+  }
+}
+
+#infinite .highway-barrier {
+  box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.3);
+
+  &::before,
+  &::after {
+    content: ' ';
+    position: absolute;
+    z-index: 9;
+    width: 300px;
+    height: 100%;
+  }
+
+  .highway-lane {
+    // Size * (2x amount of cars)
+    width: calc(300px * 12);
+
+    .highway-car {
+      width: 300px;
+      animation: translateInfinite 20s linear infinite;
+    }
+  }
+}
+
+.highway-slider:hover .highway-car {
+  animation-play-state: paused !important;
+}
+// END-TODO

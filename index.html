@@ -48,10 +48,11 @@
     <section class="projects" id="projects">
       <h4 class="projects__header">Projects</h4>
       <div class="projects__subheader">
-        <p>A small selection of my work</p>
-        <a class="projects__more" href="https://github.com/Epitome87" target="_blank" rel="noopener noreferrer"
+        <!-- TODO: This seems superfluous -- the "View More" implies this -->
+        <!-- <p>A small selection of my work</p> -->
+        <!-- <a class="projects__more" href="https://github.com/Epitome87" target="_blank" rel="noopener noreferrer"
           >View More <span>→</span></a
-        >
+        > -->
       </div>
       <div class="projects__grid">
         <!-- TODO: Fill this dynamically with JavaScript and JSON? -->
@@ -170,6 +171,9 @@
           </div>
         </div>
       </div>
+      <a class="projects__more" href="https://github.com/Epitome87" target="_blank" rel="noopener noreferrer"
+        >View More <span>→</span></a
+      >
 
       <!-- CTA - Hire Me -->
       <div class="projects__cta">
@@ -191,37 +195,37 @@
           <div class="skills__list reveal fade-left">
             <div class="skill">
               <img src="images/react-original.svg" alt="React Logo" width="50" height="50" />
-              <span>React</span>
+              <p>React</p>
             </div>
             <div class="skill">
               <img src="images/html5-original.svg" alt="HTML5 Logo" width="50" height="50" />
-              <span>HTML5</span>
+              <p>HTML5</p>
             </div>
             <div class="skill">
               <img src="images/css3-original.svg" alt="CSS3 Logo" width="50" height="50" />
-              <span>CSS3</span>
+              <p>CSS3</p>
             </div>
             <div class="skill">
               <img src="images/javascript-original.svg" alt="JavaScript Logo" width="50" height="50" />
-              <span> JavaScript </span>
+              <p>JavaScript</p>
             </div>
             <div class="skill">
               <!-- <img src="images/nextjs-original.svg" alt="Next.js Logo" width="50" height="50" /> -->
               <i class="devicon-nextjs-original"></i>
-              <span>Next.js</span>
+              <p>Next.js</p>
             </div>
             <div class="skill">
               <img src="images/sass-original.svg" alt="Sass Logo" width="50" height="50" />
-              <span>Sass</span>
+              <p>Sass</p>
             </div>
             <div class="skill">
               <img src="images/tailwindcss-plain.svg" alt="Tailwind CSS Logo" width="50" height="50" />
-              <span>Tailwind</span>
+              <p>Tailwind</p>
             </div>
             <div class="skill">
               <!-- <img src="images/storybook-original.svg" alt="Storybook Logo" width="50" height="50" /> -->
               <i class="devicon-storybook-plain colored"></i>
-              <span>Storybook</span>
+              <p>Storybook</p>
             </div>
           </div>
           <p class="skills__header">Backend</p>
@@ -229,20 +233,20 @@
           <div class="skills__list reveal fade-left">
             <div class="skill">
               <img src="images/nodejs-original.svg" alt="Node.js Logo" width="50" height="50" />
-              <span>Node.js</span>
+              <p>Node.js</p>
             </div>
             <div class="skill">
               <!-- <img src="images/express-original.svg" alt="Express Logo" width="50" height="50" /> -->
               <i class="devicon-express-original"></i>
-              <span>Express</span>
+              <p>Express</p>
             </div>
             <div class="skill">
               <img src="images/mongodb-original.svg" alt="MongoDB Logo" width="50" height="50" />
-              <span>MongoDB</span>
+              <p>MongoDB</p>
             </div>
             <div class="skill">
               <img src="images/postgresql-original.svg" alt="PostgreSQL Logo" width="50" height="50" />
-              <span>PostgreSQL</span>
+              <p>PostgreSQL</p>
             </div>
           </div>
           <p class="skills__header">Tools</p>
@@ -250,20 +254,20 @@
           <div class="skills__list reveal fade-left">
             <div class="skill">
               <img src="images/git-original.svg" alt="Git Logo" width="50" height="50" />
-              <span>Git</span>
+              <p>Git</p>
             </div>
             <div class="skill">
               <img src="images/npm-original-wordmark.svg" alt="NPM Logo" width="50" height="50" />
-              <span>NPM</span>
+              <p>NPM</p>
             </div>
             <div class="skill">Postman</div>
             <div class="skill">
               <img src="images/vscode-original.svg" alt="VS Code Logo" width="50" height="50" />
-              <span>VS Code</span>
+              <p>VS Code</p>
             </div>
             <div class="skill">
               <img src="images/trello-plain.svg" alt="Trello Logo" width="50" height="50" />
-              <span>Trello</span>
+              <p>Trello</p>
             </div>
           </div>
           <p class="skills__header">Never-Ending Journey</p>
@@ -271,14 +275,14 @@
           <div class="skills__list reveal fade-left">
             <div class="skill">
               <img src="images/typescript-original.svg" alt="TypeScript Logo" width="50" height="50" />
-              <span>TypeScript</span>
+              <p>TypeScript</p>
             </div>
             <div class="skill">React Native</div>
             <div class="skill">Chakra UI</div>
             <div class="skill">
               <!-- <img src="images/threejs-original.svg" alt="Three.js Logo" width="50" height="50" /> -->
               <i class="devicon-threejs-original"></i>
-              <span>Three.js</span>
+              <p>Three.js</p>
             </div>
           </div>
         </div>
@@ -379,7 +383,123 @@
       </div>
 
       <!-- TODO: Make this an infinitely scrolling section listing traits -- perhaps with icons -->
-      <div class="about__traits">
+      <div id="infinite" class="highway-slider">
+        <div class="highway-barrier">
+          <ul class="highway-lane">
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait One</div>
+                <p class="trait__body">Some text about trait one, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Two</div>
+                <p class="trait__body">Some text about trait two, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Three</div>
+                <p class="trait__body">Some text about trait three, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Four</div>
+                <p class="trait__body">Some text about trait Four, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Five</div>
+                <p class="trait__body">Some text about trait Five, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Six</div>
+                <p class="trait__body">Some text about trait Six, about this long in length</p>
+              </div>
+            </li>
+
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait One</div>
+                <p class="trait__body">Some text about trait one, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Two</div>
+                <p class="trait__body">Some text about trait two, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Three</div>
+                <p class="trait__body">Some text about trait three, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Four</div>
+                <p class="trait__body">Some text about trait Four, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Five</div>
+                <p class="trait__body">Some text about trait Five, about this long in length</p>
+              </div>
+            </li>
+            <li class="highway-car">
+              <div class="trait">
+                <div class="trait__image">
+                  <!-- <img src="images/react-original.svg" alt="React Logo" width="50" height="50" /> -->
+                </div>
+                <div class="trait__header">Trait Six</div>
+                <p class="trait__body">Some text about trait Six, about this long in length</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="about__traits">
         <div class="trait">
           <div class="trait__image"></div>
           <div class="trait__header">Passionate</div>
@@ -400,7 +520,7 @@
           <div class="trait__header">Versatile</div>
           <p class="trait__body">Frontend, backend, native apps</p>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <!-- Contact Me Section -->

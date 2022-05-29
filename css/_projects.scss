@@ -30,6 +30,15 @@
     }
   }
 
+  .projects__more {
+    color: $color-primary;
+    font-size: $font-size-body * 1;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__subheader {
     display: flex;
     justify-content: space-between;
@@ -40,11 +49,6 @@
       padding-inline: $margin-desktop;
     }
 
-    .projects__more {
-      color: $color-primary;
-      font-size: $font-size-body;
-    }
-
     // The arrow
     span {
       color: $color-primary;
@@ -52,6 +56,7 @@
   }
 
   &__grid {
+    padding: 0 0.5rem;
     // TODO: This breaks momentarily around 1004px to 1012px -- has one very wide column
     display: grid;
     // On mobile, singular column of projects
@@ -170,8 +175,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    padding: 1rem 0.5rem;
 
-    font-size: $font-size-body * 0.8;
+    font-size: $font-size-body * 0.75;
     margin-block: 3rem 0;
     text-align: left;
     text-align: center;
@@ -188,7 +194,7 @@
 
     h2 {
       font-family: $font-family-body;
-      font-size: $font-size-subheading * 0.8;
+      font-size: $font-size-subheading * 0.75;
       text-align: inherit;
 
       @include breakpoint(md) {
@@ -199,41 +205,12 @@
     // The "Hire Me" CTA
     a {
       margin: 0;
-      // TODO: Remove these if I decide not to use a background color on the "Hire Me" sub-section
-      // background-color: $color-primary-dark;
-      // border-color: $color-white;
-      // background: linear-gradient(
-      //   -45deg,
-      //   hsl(213, 94%, 80%),
-      //   hsl(213, 94%, 28%),
-      //   hsl(213, 94%, 78%),
-      //   hsl(213, 94%, 18%)
-      // );
-      // background-size: 400% 400%;
-      // animation: gradient 10s ease infinite;
-      // border: none;
+      font-size: $font-size-body * 0.75;
     }
-    // TODO: Use background?
-    // background-color: $color-primary;
-    // background: linear-gradient(-45deg, hsl(213, 94%, 80%), hsl(213, 94%, 38%), hsl(213, 94%, 68%), hsl(213, 94%, 68%));
-    // background-size: 400% 400%;
-    // animation: gradient 15s ease infinite;
 
     // TODO: Do I like this styling?!
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
     border-top: 2px solid $color-primary;
     border-bottom: 2px solid $color-primary;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
   }
 }
