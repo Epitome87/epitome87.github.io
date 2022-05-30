@@ -130,6 +130,8 @@ figure {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    // TODO: Which justify-content looks best?
+    justify-content: space-between;
     gap: $margin-mobile;
 
     @include breakpoint(md) {
@@ -154,6 +156,8 @@ figure {
     }
 
     .about__body {
+      flex-grow: 1;
+      flex-basis: 80%;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -171,8 +175,14 @@ figure {
         align-self: stretch;
         padding: 2rem;
         max-width: 75ch;
-        // border: 5px solid $color-primary;
+        gap: 3rem;
       }
+    }
+
+    .about__biography {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
   }
 
@@ -195,14 +205,9 @@ figure {
     column-gap: 1rem;
     justify-content: space-between;
     background-color: color.scale($color-primary-dark, $lightness: -20%);
-    // TODO: Decide -- do I like this more?! Kind of! But it demands attention -- yet this Traits section is really not important...
-    // TODO: I like red bg or white! If red, do I prefer white or black font...
-    // TODO: Probably white font, but black makes it less prominent -- good until I can think of copy that's better than just 4 random traits!
     background-color: #f8fafc;
     background-color: $color-primary;
     border-block: 1px solid $color-primary;
-    // TODO:
-    // border-block: 1px solid white;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
 
     margin-block: 0rem 4rem;
