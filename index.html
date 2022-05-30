@@ -194,10 +194,6 @@
           <p class="skills__subheader">Seeing ideas grow inside of the browser is always exciting</p>
           <div class="skills__list reveal fade-left">
             <div class="skill">
-              <img src="images/react-original.svg" alt="React Logo" width="50" height="50" />
-              <p>React</p>
-            </div>
-            <div class="skill">
               <img src="images/html5-original.svg" alt="HTML5 Logo" width="50" height="50" />
               <p>HTML5</p>
             </div>
@@ -208,6 +204,10 @@
             <div class="skill">
               <img src="images/javascript-original.svg" alt="JavaScript Logo" width="50" height="50" />
               <p>JavaScript</p>
+            </div>
+            <div class="skill">
+              <img src="images/react-original.svg" alt="React Logo" width="50" height="50" />
+              <p>React</p>
             </div>
             <div class="skill">
               <!-- <img src="images/nextjs-original.svg" alt="Next.js Logo" width="50" height="50" /> -->
@@ -271,8 +271,13 @@
             </div>
           </div>
           <p class="skills__header">Never-Ending Journey</p>
-          <p class="skills__subheader">Some skills I'm currently acquiring</p>
+          <p class="skills__subheader">Some skills I'm currently leveling-up</p>
           <div class="skills__list reveal fade-left">
+            <div class="skill">
+              <!-- <img src="images/nextjs-original.svg" alt="Next.js Logo" width="50" height="50" /> -->
+              <!-- <i class="devicon-nextjs-original"></i> -->
+              <p>Svelte</p>
+            </div>
             <div class="skill">
               <img src="images/typescript-original.svg" alt="TypeScript Logo" width="50" height="50" />
               <p>TypeScript</p>
@@ -330,7 +335,6 @@
             <li class="item reveal fade-right">
               <!-- <img src="images/graduation-cap-solid.svg" alt="Graduation cap" /> -->
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                 <path
                   fill="currentColor"
                   d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z"
@@ -343,7 +347,6 @@
             <li class="item reveal fade-right">
               <!-- <img src="images/graduation-cap-solid.svg" alt="Graduation cap" /> -->
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                 <path
                   fill="currentColor"
                   d="M623.1 136.9l-282.7-101.2c-13.73-4.91-28.7-4.91-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09L76.07 204.6c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480H93.11c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89c4.252-17.76 12.88-33.82 24.94-47.03l190.6 68.23c13.73 4.91 28.7 4.91 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160S633.6 140.4 623.1 136.9zM351.1 314.4C341.7 318.1 330.9 320 320 320c-10.92 0-21.69-1.867-32-5.555L142.8 262.5L128 405.3C128 446.6 213.1 480 320 480c105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z"
@@ -371,12 +374,25 @@
           </div>
           <!-- TODO: This wall of text is ugly on mobile -->
           <div class="about__body">
-            <p class="reveal fade-bottom">
-              I'm <span class="highlight">Matthew McGrath</span>, a long-time programmer beginning an exciting journey
-              in web development. Since my first 'Hello, World' in high school, I have had an unbound curiosity for code
-              and the problem-solving that accompanies it. With a strong pursuit for knowledge, I am perpetually
-              improving my full-stack skills. Eager to tackle web development challenges with long-lasting impacts.
-            </p>
+            <div class="about__biography reveal fade-bottom">
+              <p>
+                Hi, I'm <span class="highlight">Matthew McGrath</span>, a California-based
+                <span class="highlight">Software Developer</span> and enthusiast of beautiful, functional design.
+              </p>
+              <p>
+                Since writing my first line of code at the age of 15, I have had an unbound curiosity for programming
+                and the problem-solving it encapsulates. While pursuing a Bachelor's in Computer Science, I began
+                developing indie games. After years of dedication and over 100,000 lines of code, I was able to release
+                two completely-independent games for the Xbox 360 Indie Games platform. I also collaborated with others
+                in testing and developing their dream games.
+              </p>
+              <p>
+                My passion for programming finally led me to where I am now: a
+                <span class="highlight">Frontend Web Developer</span>. After years of disciplined self-learning of HTML,
+                CSS, JavaScript, and React, I am eager to help connect the world through fully-responsive, impactful web
+                applications.
+              </p>
+            </div>
             <button type="button">Download CV</button>
           </div>
         </div>
@@ -559,7 +575,6 @@
           <div class="contact__detail reveal fade-left">
             <!-- <img src="images/clock-solid.svg" alt="Clock" /> -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
               <path
                 fill="currentColor"
                 d="M256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512zM232 256C232 264 236 271.5 242.7 275.1L338.7 339.1C349.7 347.3 364.6 344.3 371.1 333.3C379.3 322.3 376.3 307.4 365.3 300L280 243.2V120C280 106.7 269.3 96 255.1 96C242.7 96 231.1 106.7 231.1 120L232 256z"
