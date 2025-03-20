@@ -1,7 +1,8 @@
 @use 'sass:color';
 
 header {
-  background-color: color.change($color-primary-dark, $alpha: 1);
+  // background-color: color.change($color-primary-dark, $alpha: 1);
+  background-color: var(--clr-background);
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -15,7 +16,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: var(--clr-text); //white;
 
   // Using &__logo seems to give a specificity of 0 -- thus the global anchor style overtakes -- why?!
   .navbar__logo {
@@ -68,7 +69,8 @@ header {
 
   &__links li a {
     text-decoration: none;
-    color: white;
+    // color: white;
+    color: var(--clr-text);
     padding: 0.25rem;
     display: block;
   }

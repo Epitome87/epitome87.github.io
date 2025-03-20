@@ -235,6 +235,7 @@ figure {
     // TODO:
     color: #171717;
     color: #fafafa;
+    color: var(--clr-text);
 
     @include breakpoint(xl) {
       font-size: $font-size-subheading * 0.75;
@@ -246,6 +247,7 @@ figure {
     font-size: $font-size-body * 0.6;
     color: #262626;
     color: #f5f5f5;
+    color: var(--clr-text);
 
     font-weight: 500;
 
@@ -270,14 +272,22 @@ figure {
     z-index: 9;
     inset: 0;
 
-    // background: linear-gradient(to right, rgba(rgba($color-primary-dark, 1), 1) 0%, rgba(255, 255, 255, 0) 100%);
+    // background: linear-gradient(
+    //   to right,
+    //   rgba($color-primary-dark, 1) 0%,
+    //   rgba($color-primary-dark, 0) 15%,
+    //   rgba($color-primary-dark, 0) 85%,
+    //   rgba($color-primary-dark, 0.8) 90%,
+    //   rgba($color-primary-dark, 1) 100%
+    // );
+
     background: linear-gradient(
       to right,
-      rgba($color-primary-dark, 1) 0%,
-      rgba($color-primary-dark, 0) 15%,
-      rgba($color-primary-dark, 0) 85%,
-      rgba($color-primary-dark, 0.8) 90%,
-      rgba($color-primary-dark, 1) 100%
+      rgba(var(--clr-text), 1) 0%,
+      rgba(var(--clr-text), 0) 15%,
+      rgba(var(--clr-text), 0) 85%,
+      rgba(var(--clr-text), 0.8) 90%,
+      rgba(var(--clr-text), 1) 100%
     );
   }
 }

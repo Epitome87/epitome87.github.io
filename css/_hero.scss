@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 #particles-js {
   position: absolute;
   // position: fixed;
@@ -6,7 +8,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $color-primary-dark;
+  background-color: var(--clr-background); //$color-primary-dark;
   // background-color: $color-primary * 0.8;
   // clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
 
@@ -24,6 +26,12 @@
       hsla(240, 9%, 13%, 0) 0%,
       hsla(240, 9%, 13%, 0.5) 70%,
       hsla(240, 9%, 13%, 1) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--clr-background), 0) 0%,
+      rgba(var(--clr-background), 0.7) 70%,
+      rgba(var(--clr-background), 1) 100%
     );
   }
 }
@@ -49,7 +57,7 @@
     padding: 0.5rem 2rem;
     text-transform: uppercase;
     border: 3px solid $color-primary;
-    color: $color-white;
+    color: var(--clr-text); //$color-white;
     background-color: transparent;
     box-shadow: 0px 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
     transition: 0.15s ease-in-out;
@@ -145,7 +153,7 @@
     .last-name {
       font-size: 3rem;
       background: #a2d2ff;
-      color: $color-primary-dark;
+      color: var(--clr-background); //$color-primary-dark;
       display: inline-block;
       padding: 0 1rem;
       border-radius: 5px;

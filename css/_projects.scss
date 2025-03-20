@@ -3,9 +3,9 @@
 .projects {
   // Removing section paddings
   // padding-inline: $margin-mobile;
-  padding: 0;
+  // padding: 0;
   margin: 0 auto;
-  max-width: unset;
+  // max-width: unset;
 
   // @include breakpoint(md) {
   //   padding-inline: $margin-desktop;
@@ -58,64 +58,76 @@
   &__grid {
     padding: 0 0.5rem;
     // TODO: This breaks momentarily around 1004px to 1012px -- has one very wide column
-    display: grid;
-    // On mobile, singular column of projects
-    // grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 1fr;
-    gap: 2rem;
-
-    @media screen and (min-width: 675px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include breakpoint(md) {
-      padding-inline: $margin-desktop;
-    }
-
-    @include breakpoint(md) {
-      // grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
-      // grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include breakpoint(lg) {
-      // grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include breakpoint(xl) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    gap: 7.5rem;
 
     .project {
       // TODO: This was 350px -- which do I prefer?!
-      height: 300px;
-      border-radius: $subtle;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      background-color: $color-primary;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      transition: 0.3s ease-in-out;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
 
-      &__overlay {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+      // height: 300px;
+      // border-radius: $subtle;
+      // background-repeat: no-repeat;
+      // background-size: cover;
+      // background-position: center center;
+      // background-color: $color-primary;
+      // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+      // cursor: pointer;
+      transition: 0.3s ease-in-out;
+      // position: relative;
+
+      &__preview {
+        flex-basis: 55%;
+
+        img {
+          border-radius: $rounded;
+          object-fit: cover;
+          // object-fit: contain;
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+
+        // position: relative;
+
+        flex-basis: 45%;
+        align-self: center;
+        color: var(--clr-text);
+        // opacity: 0;
         background-color: color.scale($color-primary-dark, $lightness: -20%);
+        background-color: var(--clr-background);
         border-radius: $subtle;
-        transition: 0.5s ease-in-out;
-        border: 2px solid $color-primary;
-        padding-block: 0.5rem;
+        // transition: 0.5s ease-in-out;
+        // border: 2px solid $color-primary;
+        // padding-block: 0.5rem;
+
+        .skills {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.5rem;
+
+          span {
+            // padding: 0.25rem 0.5rem;
+            // border-radius: $subtle;
+            // background-color: $color-primary;
+            // color: var(--clr-text);
+            // font-size: $font-size-body * 0.75;
+          }
+        }
       }
 
       &:focus,
       &:hover {
-        transform: scale(1.05);
+        // transform: scale(1.05);
       }
 
       &:focus .project__overlay,
@@ -123,48 +135,35 @@
         opacity: 1;
       }
 
-      &:nth-of-type(1) {
-        background-image: url(../images/preview-flat-ui-clone.png);
-      }
-      &:nth-of-type(2) {
-        // background-image: url(../images/preview-fylo.png);
-        background-image: url(../images/preview-social-proof-section.png);
-      }
-      &:nth-of-type(3) {
-        background-image: url(../images/preview-react-recipes.png);
-      }
-      &:nth-of-type(4) {
-        background-image: url(../images/preview-dad-jokes.png);
-      }
-      &:nth-of-type(5) {
-        // background-image: url(../images/preview-stock-forum.png);
-        background-image: url(../images/preview-omnifood.png);
-      }
-      &:nth-of-type(6) {
-        background-image: url(../images/preview-personal-portfolio.png);
+      &:nth-of-type(even) {
+        @include breakpoint(md) {
+          flex-direction: row-reverse;
+        }
       }
 
       &__header {
         font-size: $font-size-subheading;
+        font-size: $font-size-subheading * 1.25;
       }
 
       &__description {
         font-size: $font-size-body * 0.85;
-        padding: $margin-mobile;
+        // padding: $margin-mobile;
 
         @include breakpoint(md) {
           font-size: $font-size-body;
-          padding: $margin-desktop;
+          // padding: $margin-desktop;
         }
       }
 
       &__buttons {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 10%;
         display: flex;
         gap: $margin-desktop;
+        justify-content: center;
+      }
+
+      @include breakpoint(md) {
+        flex-direction: row;
       }
     }
   }

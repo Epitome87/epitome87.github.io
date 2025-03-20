@@ -35,8 +35,8 @@ body {
   background-color: $color-primary-dark;
   color: $font-color-primary;
   // TODO: If I incorporate light / dark theme, we'll want to use these CSS variables instead
-  // background-color: var(--clr-background);
-  // color: var(--clr-text);
+  background-color: var(--clr-background);
+  color: var(--clr-text);
 }
 
 /* Custom Scrollbar */
@@ -60,7 +60,7 @@ img {
 a:link,
 a:visited {
   text-decoration: none;
-  color: $color-white;
+  color: var(--clr-text); //$color-white;
 }
 
 .container {

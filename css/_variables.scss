@@ -1,7 +1,8 @@
 /**************** Colors ******************/
-$color-primary-dark: hsl(240, 9%, 13%);
-// $color-primary: hsl(346, 100%, 63%);
+$color-primary-dark: hsla(240, 9%, 13%);
+
 $color-primary: hsl(213, 94%, 68%);
+// $color-primary: hsl(346, 100%, 63%);
 // This color also isn't bad as my primary #60a5fa  #1d4ed8
 $color-selection: hsl(340, 100%, 50%);
 $color-selection: $color-primary;
@@ -81,16 +82,16 @@ $colorsLight: (
 }
 
 // TODO: Light Mode is ugly at the moment -- let's not even make it an option
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     @each $name, $color in $colorsLight {
-//       --#{$name}: #{$color};
-//     }
-//   }
-// }
+@media (prefers-color-scheme: light) {
+  :root {
+    @each $name, $color in $colorsLight {
+      --#{$name}: #{$color};
+    }
+  }
+}
 
-// [color-scheme='light'] {
-//   @each $name, $color in $colorsLight {
-//     --#{$name}: #{$color};
-//   }
-// }
+[color-scheme='light'] {
+  @each $name, $color in $colorsLight {
+    --#{$name}: #{$color};
+  }
+}
