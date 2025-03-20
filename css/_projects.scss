@@ -56,29 +56,18 @@
   }
 
   &__grid {
-    padding: 0 0.5rem;
-    // TODO: This breaks momentarily around 1004px to 1012px -- has one very wide column
     display: flex;
     flex-direction: column;
-    grid-template-columns: 1fr;
     gap: 7.5rem;
 
     .project {
-      // TODO: This was 350px -- which do I prefer?!
       display: flex;
       flex-direction: column;
-      gap: 5rem;
+      gap: 2.5rem;
 
-      // height: 300px;
-      // border-radius: $subtle;
-      // background-repeat: no-repeat;
-      // background-size: cover;
-      // background-position: center center;
-      // background-color: $color-primary;
-      // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-      // cursor: pointer;
-      transition: 0.3s ease-in-out;
-      // position: relative;
+      @include breakpoint(md) {
+        gap: 5rem;
+      }
 
       &__preview {
         flex-basis: 55%;
@@ -86,53 +75,31 @@
         img {
           border-radius: $rounded;
           object-fit: cover;
-          // object-fit: contain;
+          max-height: 300px;
+
+          box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+
+          @include breakpoint(md) {
+            max-height: unset;
+          }
         }
       }
 
       &__info {
         display: flex;
         flex-direction: column;
+        flex-basis: 45%;
         align-items: flex-start;
+        align-self: center;
         gap: 1.5rem;
 
-        // position: relative;
-
-        flex-basis: 45%;
-        align-self: center;
-        color: var(--clr-text);
-        // opacity: 0;
-        background-color: color.scale($color-primary-dark, $lightness: -20%);
-        background-color: var(--clr-background);
-        border-radius: $subtle;
-        // transition: 0.5s ease-in-out;
-        // border: 2px solid $color-primary;
-        // padding-block: 0.5rem;
-
         .skills {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 0.5rem;
-
-          span {
-            // padding: 0.25rem 0.5rem;
-            // border-radius: $subtle;
-            // background-color: $color-primary;
-            // color: var(--clr-text);
-            // font-size: $font-size-body * 0.75;
-          }
         }
       }
 
       &:focus,
       &:hover {
         // transform: scale(1.05);
-      }
-
-      &:focus .project__overlay,
-      &:hover .project__overlay {
-        opacity: 1;
       }
 
       &:nth-of-type(even) {
@@ -143,12 +110,11 @@
 
       &__header {
         font-size: $font-size-subheading;
-        font-size: $font-size-subheading * 1.25;
+        // font-size: $font-size-subheading * 1.25;
       }
 
       &__description {
-        font-size: $font-size-body * 0.85;
-        // padding: $margin-mobile;
+        font-size: $font-size-body;
 
         @include breakpoint(md) {
           font-size: $font-size-body;

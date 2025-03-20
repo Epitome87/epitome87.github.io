@@ -59,12 +59,12 @@
 
   &:hover,
   &:focus {
-    cursor: pointer;
+    // cursor: pointer;
     transform: scale(1.05);
     background-color: $color-primary;
   }
 
-  color: var(--clr-text); //$color-white;
+  color: var(--clr-text); 
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   background-color: color.scale($color-primary-dark, $lightness: -10%);
   background-color: var(--clr-background, 0);
